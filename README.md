@@ -4,4 +4,4 @@ Static site published by Cloudflare Pages. Every push to this branch republishes
 
 This is the review copy: `_headers` and `robots.txt` keep search engines out until launch.
 
-Production branch: `main`. Cloudflare Pages settings: framework None, no build command, output directory `/`.
+Production branch: `main` (Cloudflare Pages project `babynamepopularity`). Framework None, no build command, output directory `/`.
