@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Baby Page: name poll, baby pool and registry links | BabyNamePopularity</title>
+<meta name="description" content="One free link for everyone waiting on your baby: a name poll with real popularity data, a baby pool, all your registries and the big announcement.">
+<meta name="robots" content="noindex, nofollow">
+<!--og-->
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Mulish:wght@400;600;700;800&display=swap">
+<style>
+/* Layout: the main site's warm magazine look, narrowed to one column so a family page reads like a card you were handed. */
+:root{
+  --bg:#FFFCF9; --surface:#FFF6F0; --card:#FFFFFF; --ink:#181A3A; --ink-2:#43476A; --muted:#71758F;
+  --line:#EEE4DB; --line-2:#DDD0C4; --brand:#D93F73; --brand-soft:#FCE4EC; --cta:#3D2C77; --cta-hover:#2D1F5E;
+  --girl:#C2416B; --girl-soft:#FCE3EB; --boy:#2F6DA8; --boy-soft:#E1EEFB; --up:#16805F; --down:#C0453E;
+  --lilac:#ECE6FA; --mint:#DDF2EA; --butter:#FFF1C9; --peach:#FFE7DA;
+  --serif:"DM Serif Display",Georgia,serif; --sans:"Mulish",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#14152A; --surface:#1C1D36; --card:#202240; --ink:#F2EEF6; --ink-2:#CFCBE0; --muted:#A3A2BF;
+  --line:#2E3052; --line-2:#3C3F66; --brand:#F0719C; --brand-soft:#3A2240; --cta:#9C8BF0; --cta-hover:#B3A6F5;
+  --girl:#F08AAB; --girl-soft:#3A2240; --boy:#7FB2E8; --boy-soft:#1E3050; --up:#5CC79E; --down:#F08A82;
+  --lilac:#2A2650; --mint:#173A33; --butter:#3A3218; --peach:#3A2A22; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#14152A; --surface:#1C1D36; --card:#202240; --ink:#F2EEF6; --ink-2:#CFCBE0; --muted:#A3A2BF;
+  --line:#2E3052; --line-2:#3C3F66; --brand:#F0719C; --brand-soft:#3A2240; --cta:#9C8BF0; --cta-hover:#B3A6F5;
+  --girl:#F08AAB; --girl-soft:#3A2240; --boy:#7FB2E8; --boy-soft:#1E3050; --up:#5CC79E; --down:#F08A82;
+  --lilac:#2A2650; --mint:#173A33; --butter:#3A3218; --peach:#3A2A22; color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 var(--sans)}
+a{color:var(--brand)}
+.wrap{max-width:720px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left));padding-right:max(16px,env(safe-area-inset-right))}
+header.top{border-bottom:1px solid var(--line);background:var(--bg)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;max-width:1080px}
+.logo{display:flex;align-items:center;gap:8px;text-decoration:none;color:var(--ink);font-weight:800;font-size:17px}
+.logo-mark{width:30px;height:30px;border-radius:50%;background:var(--brand);display:grid;place-items:center}
+.logo i{font-style:normal;color:var(--brand)}
+header.top nav a{color:var(--ink-2);text-decoration:none;font-weight:700;font-size:14px;margin-left:18px}
+header.top nav a:hover{color:var(--brand)}
+@media (max-width:560px){header.top nav .opt{display:none}}
+main{padding-block:28px 72px;display:grid;gap:20px}
+h1,h2,h3{margin:0}
+h1{font-family:var(--serif);font-weight:400;font-size:clamp(34px,7vw,52px);line-height:1.05;text-wrap:balance}
+h2{font-family:var(--serif);font-weight:400;font-size:26px;line-height:1.15}
+h3{font-size:16px;font-weight:800}
+p{margin:0}
+.muted{color:var(--muted)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--brand)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;display:grid;gap:14px}
+.card.tint{background:var(--surface)}
+.hero{display:grid;gap:12px;padding-block:8px}
+.btn{appearance:none;border:0;border-radius:999px;background:var(--cta);color:#fff;font:800 15px var(--sans);padding:12px 20px;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px}
+:root[data-theme="dark"] .btn{color:#14152A}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .btn{color:#14152A}}
+.btn:hover{background:var(--cta-hover)}
+.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--line-2)}
+.btn.ghost:hover{border-color:var(--ink)}
+.btn.small{padding:8px 14px;font-size:14px;min-height:36px}
+.btn:disabled{opacity:.55;cursor:default}
+.row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.feat{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+@media (max-width:560px){.feat{grid-template-columns:1fr}}
+.feat div{border-radius:14px;padding:16px;display:grid;gap:4px}
+.feat div:nth-child(1){background:var(--lilac)} .feat div:nth-child(2){background:var(--mint)}
+.feat div:nth-child(3){background:var(--butter)} .feat div:nth-child(4){background:var(--peach)}
+.steps{counter-reset:s;display:grid;gap:10px;margin:0;padding:0;list-style:none}
+.steps li{counter-increment:s;display:grid;grid-template-columns:32px 1fr;gap:12px;align-items:start}
+.steps li::before{content:counter(s);width:32px;height:32px;border-radius:50%;background:var(--brand-soft);color:var(--brand);font-weight:800;display:grid;place-items:center}
+label{font-weight:700;font-size:14px;display:grid;gap:6px}
+label small{font-weight:400;color:var(--muted)}
+input,select,textarea{font:16px var(--sans);color:var(--ink);background:var(--bg);border:1.5px solid var(--line-2);border-radius:12px;padding:10px 12px;width:100%;min-height:44px}
+input:focus,select:focus,textarea:focus,.btn:focus-visible,a:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
+textarea{min-height:80px;resize:vertical}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media (max-width:560px){.grid2{grid-template-columns:1fr}}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{display:inline-flex;align-items:center;gap:6px;background:var(--surface);border:1px solid var(--line-2);border-radius:999px;padding:6px 6px 6px 12px;font-weight:700}
+.chip button{border:0;background:var(--line);color:var(--ink);border-radius:50%;width:24px;height:24px;cursor:pointer;font-size:14px;line-height:1}
+.banner{background:var(--butter);border-radius:14px;padding:12px 16px;font-size:14px}
+.notice{background:var(--mint);border-radius:14px;padding:14px 16px;display:grid;gap:10px}
+.owner{border:2px dashed var(--line-2)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;text-align:center}
+.stats b{display:block;font-family:var(--serif);font-weight:400;font-size:28px;line-height:1.1}
+.stats span{font-size:12px;color:var(--muted)}
+@media (max-width:420px){.stats{grid-template-columns:repeat(2,1fr)}}
+.names{display:grid;gap:10px}
+.nm{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;border:1.5px solid var(--line);border-radius:14px;padding:12px 14px;cursor:pointer}
+.nm:has(input:checked){border-color:var(--brand);background:var(--brand-soft)}
+.nm input{width:22px;height:22px;min-height:0;accent-color:var(--brand)}
+.nm .n{font-family:var(--serif);font-size:24px;line-height:1.1}
+.nm .meta{font-size:13px;color:var(--muted)}
+.nm .meta a{color:inherit}
+.up{color:var(--up);font-weight:800}.down{color:var(--down);font-weight:800}
+.bar{display:grid;grid-template-columns:110px 1fr 44px;gap:10px;align-items:center;font-weight:700}
+.bar .track{height:14px;border-radius:7px;background:var(--surface);overflow:hidden}
+.bar .fill{height:100%;background:var(--brand);border-radius:7px}
+.bar.lead .fill{background:var(--cta)}
+.bar span:last-child{text-align:right;color:var(--muted);font-weight:600}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{text-align:left;padding:8px 6px;border-bottom:1px solid var(--line)}
+th{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+tr.best td{background:var(--butter);font-weight:800}
+.reg{display:grid;gap:8px}
+.reg a{display:flex;justify-content:space-between;align-items:center;border:1.5px solid var(--line);border-radius:14px;padding:12px 16px;text-decoration:none;color:var(--ink);font-weight:800}
+.reg a:hover{border-color:var(--brand)}
+.born{background:linear-gradient(var(--brand-soft),var(--card));text-align:center;padding:32px 22px}
+.born .big{font-family:var(--serif);font-size:clamp(44px,10vw,72px);line-height:1}
+.share{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px}
+.linkbox{display:flex;gap:8px}
+.linkbox input{font-size:14px}
+.pass{background:var(--lilac);border-radius:18px;padding:22px;display:grid;gap:12px}
+footer{border-top:1px solid var(--line);padding-block:24px 40px;font-size:13px;color:var(--muted)}
+footer .wrap{display:grid;gap:6px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:10px 18px;border-radius:999px;font-weight:700;font-size:14px;z-index:9}
+.spark{vertical-align:middle}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="logo" href="/"><span class="logo-mark"><svg width="17" height="17" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12 21s-7.8-4.8-9.6-9.6C1 7.9 3.1 4.2 6.8 4.2c2.1 0 3.8 1.2 5.2 3.1 1.4-1.9 3.1-3.1 5.2-3.1 3.7 0 5.8 3.7 4.4 7.2C19.8 16.2 12 21 12 21z"/></svg></span>babyname<i>popularity</i></a>
+  <nav aria-label="Main"><a class="opt" href="/#top">Top names</a><a class="opt" href="/#gear">Baby gear</a><a href="/baby/">Baby Page</a></nav>
+</div></header>
+<main class="wrap" id="app" aria-live="polite"><p class="muted">Loading…</p></main>
+<footer><div class="wrap">
+  <p>Baby Pages are private to people who have the link. They are never listed on search engines. Use a first name or nickname, not your full name or address.</p>
+  <p>Registry links go to the store that holds the registry. BabyNamePopularity may earn a commission from gift links on its own pages.</p>
+  <p><a href="/">BabyNamePopularity.com</a></p>
+</div></footer>
+<script>
+(function(){
+"use strict";
+var app=document.getElementById("app");
+try{ var th=localStorage.getItem("bnp-theme"); if(th) document.documentElement.setAttribute("data-theme",th); }catch(e){}
+
+/* ---------- helpers ---------- */
+function esc(s){ return String(s==null?"":s).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];}); }
+function $(s,el){ return (el||document).querySelector(s); }
+function $$(s,el){ return Array.prototype.slice.call((el||document).querySelectorAll(s)); }
+function ls(k,v){ try{ if(v===undefined) return JSON.parse(localStorage.getItem(k)||"null"); localStorage.setItem(k,JSON.stringify(v)); }catch(e){ return null; } }
+function rid(n){ var a="ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnpqrstuvwxyz23456789",s="",b=new Uint8Array(n); crypto.getRandomValues(b); for(var i=0;i<n;i++) s+=a[b[i]%a.length]; return s; }
+function toast(t){ var d=document.createElement("div"); d.className="toast"; d.textContent=t; document.body.appendChild(d); setTimeout(function(){d.remove();},2200); }
+function fmtDate(d){ if(!d) return ""; var p=d.split("-"); return ["January","February","March","April","May","June","July","August","September","October","November","December"][+p[1]-1]+" "+(+p[2])+", "+p[0]; }
+function daysFrom(d){ if(!d) return null; var t=new Date(); t.setHours(0,0,0,0); var p=d.split("-"); return Math.round((new Date(+p[0],+p[1]-1,+p[2])-t)/864e5); }
+function countdown(d){ var n=daysFrom(d); if(n===null) return ""; if(n>13) return "Due in "+Math.round(n/7)+" weeks"; if(n>1) return "Due in "+n+" days"; if(n===1) return "Due tomorrow"; if(n===0) return "Due today"; return "Any day now"; }
+var VOTER=ls("bnp-voter"); if(!VOTER){ VOTER=rid(16); ls("bnp-voter",VOTER); }
+var OWN=ls("bnp-baby-own")||{};
+var REF=(new URLSearchParams(location.search)).get("ref")||ls("bnp-baby-ref")||"";
+if(REF){ ls("bnp-baby-ref",REF); }
+
+/* ---------- name data from the main site ---------- */
+var H=null, Hp=null;
+function names(){ if(!Hp) Hp=fetch("/names_history.json").then(function(r){return r.json();}).then(function(d){ H=d; return d; }).catch(function(){ return null; }); return Hp; }
+function lookup(name){
+  if(!H) return null; var b=name.toLowerCase().replace(/[^a-z]/g,""), g=H.names[b+"-g"], m=H.names[b+"-b"];
+  function rk(e){ if(!e) return 0; return e.r25 || e.r[e.r.length-1] || 0; }
+  var e = !g ? m : !m ? g : (rk(g)&&(!rk(m)||rk(g)<rk(m)) ? g : m);
+  if(!e) return null; var key=(e===g? b+"-g" : b+"-b"), r=e.r, last=rk(e), ten=r[r.length-11]||0;
+  return { key:key, sex:e.s, rank:last, ten:ten, r:r.slice(-30) };
+}
+function spark(r){
+  var w=90,h=26, v=r.map(function(x){return x>0? Math.log(x)/Math.LN10 : null;}), max=4, pts=[];
+  v.forEach(function(x,i){ if(x!==null) pts.push((i*(w/(v.length-1))).toFixed(1)+","+(2+x/max*(h-4)).toFixed(1)); });
+  return pts.length>1? '<svg class="spark" width="'+w+'" height="'+h+'" viewBox="0 0 '+w+' '+h+'" aria-hidden="true"><polyline points="'+pts.join(" ")+'" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>' : "";
+}
+function nameMeta(n){
+  var x=lookup(n.name); if(!x) return '<span class="meta">Rare or unranked in U.S. data, so it will stand out</span>';
+  var tr = x.ten && x.rank ? (x.ten-x.rank) : 0;
+  var mv = tr>0? ' · <span class="up">▲ up '+tr.toLocaleString()+(tr===1?' spot':' spots')+' in 10 yrs</span>' : tr<0? ' · <span class="down">▼ down '+(-tr).toLocaleString()+(tr===-1?' spot':' spots')+' in 10 yrs</span>' : "";
+  return '<span class="meta">#'+x.rank.toLocaleString()+' for '+(x.sex==="F"?"girls":"boys")+mv+' · <a href="/#name-'+x.key+'" target="_blank" rel="noopener">history</a></span>';
+}
+
+/* ---------- storage: the site API, or this browser in preview mode ---------- */
+var LIVE=null;
+function req(method,path,body,token){
+  var h={"content-type":"application/json"}; if(token) h["x-edit-token"]=token;
+  return fetch("/api/baby"+path,{method:method,headers:h,body:body?JSON.stringify(body):undefined}).then(function(r){
+    var ct=r.headers.get("content-type")||"";
+    if(r.status===503 || ct.indexOf("json")<0) throw {demo:true};
+    return r.json().then(function(j){ if(!r.ok) throw j; return j; });
+  });
+}
+var demo={
+  db:function(){ return ls("bnp-baby-demo")||{}; }, save:function(d){ ls("bnp-baby-demo",d); },
+  create:function(b){ var d=this.db(), id=rid(10), edit=rid(24); b.id=id; b.created=new Date().toISOString(); b.ref=REF; d[id]={page:b,edit:edit,votes:{},guesses:{},stats:{}}; this.save(d); return Promise.resolve({id:id,edit:edit}); },
+  get:function(id,token){ var x=this.db()[id]; if(!x) return Promise.reject({error:"not-found"}); var votes={},voters=0; Object.keys(x.votes).forEach(function(v){ voters++; x.votes[v].forEach(function(p){ votes[p]=(votes[p]||0)+1; }); });
+    return Promise.resolve({page:x.page,votes:votes,voters:voters,guesses:Object.keys(x.guesses).map(function(k){return x.guesses[k];}),owner:token===x.edit,stats:x.stats}); },
+  update:function(id,b,token){ var d=this.db(); if(!d[id]||d[id].edit!==token) return Promise.reject({error:"forbidden"}); Object.assign(d[id].page,b); this.save(d); return Promise.resolve({ok:true}); },
+  del:function(id){ var d=this.db(); delete d[id]; this.save(d); return Promise.resolve({ok:true}); },
+  vote:function(id,picks){ var d=this.db(); if(!picks.length) delete d[id].votes[VOTER]; else d[id].votes[VOTER]=picks; this.save(d); return Promise.resolve({ok:true}); },
+  guess:function(id,g){ var d=this.db(); d[id].guesses[VOTER]=g; this.save(d); return Promise.resolve({ok:true}); },
+  share:function(id){ var d=this.db(); if(d[id]){ d[id].stats.shares=(d[id].stats.shares||0)+1; this.save(d);} return Promise.resolve({ok:true}); }
+};
+var api={
+  create:function(b){ if(LIVE===false) return demo.create(b); b.ref=REF; return req("POST","",b).then(function(j){LIVE=true;return j;}).catch(function(e){ if(e&&e.demo){LIVE=false; return demo.create(b);} throw e; }); },
+  get:function(id,t){ if(LIVE===false) return demo.get(id,t); return req("GET","/"+id,null,t).then(function(j){LIVE=true;return j;}).catch(function(e){ if(e&&e.demo){LIVE=false; return demo.get(id,t);} throw e; }); },
+  update:function(id,b,t){ return LIVE? req("PUT","/"+id,b,t) : demo.update(id,b,t); },
+  del:function(id,t){ return LIVE? req("DELETE","/"+id,null,t) : demo.del(id); },
+  vote:function(id,p){ return LIVE? req("POST","/"+id+"/vote",{voter:VOTER,picks:p}) : demo.vote(id,p); },
+  guess:function(id,g){ return LIVE? req("POST","/"+id+"/guess",Object.assign({voter:VOTER},g)) : demo.guess(id,g); },
+  share:function(id){ return (LIVE? req("POST","/"+id+"/event",{type:"share"}) : demo.share(id)).catch(function(){}); }
+};
+function demoBanner(){ return LIVE===false? '<div class="banner"><b>Preview mode.</b> Baby Pages are saved only in this browser until the site\'s storage is switched on, so links will not open for other people yet.</div>' : ""; }
+
+/* ---------- sharing ---------- */
+function pageUrl(id){ return location.origin+"/b/"+id; }
+function inviteUrl(id){ return location.origin+"/baby/?ref="+encodeURIComponent(id||""); }
+function shareButtons(url,text,id){
+  var t=encodeURIComponent(text+" "+url);
+  return '<div class="share">'+
+    (navigator.share? '<button class="btn small" type="button" data-share="native" data-url="'+esc(url)+'" data-text="'+esc(text)+'">Share…</button>' : "")+
+    '<a class="btn small ghost" data-share="sms" href="sms:?&body='+t+'">Text message</a>'+
+    '<a class="btn small ghost" data-share="whatsapp" href="https://wa.me/?text='+t+'" target="_blank" rel="noopener">WhatsApp</a>'+
+    '<a class="btn small ghost" data-share="email" href="mailto:?subject='+encodeURIComponent(text)+'&body='+t+'">Email</a>'+
+    '<a class="btn small ghost" data-share="facebook" href="https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(url)+'" target="_blank" rel="noopener">Facebook</a>'+
+    '<button class="btn small ghost" type="button" data-share="copy" data-url="'+esc(url)+'">Copy link</button>'+
+  '</div>';
+}
+document.addEventListener("click",function(ev){
+  var b=ev.target.closest("[data-share]"); if(!b) return;
+  var id=CUR&&CUR.page&&CUR.page.id; if(id) api.share(id);
+  if(b.dataset.share==="copy"){ ev.preventDefault(); navigator.clipboard.writeText(b.dataset.url).then(function(){toast("Link copied");},function(){ prompt("Copy this link",b.dataset.url); }); }
+  if(b.dataset.share==="native"){ ev.preventDefault(); navigator.share({title:b.dataset.text,text:b.dataset.text,url:b.dataset.url}).catch(function(){}); }
+});
+function passAlong(id){
+  return '<section class="pass" aria-labelledby="pass-h"><h2 id="pass-h">Know someone else who’s expecting?</h2>'+
+    '<p>Send them their own free Baby Page: a name poll with real popularity data, a baby pool and one place for every registry.</p>'+
+    shareButtons(inviteUrl(id),"Make a free Baby Page for your little one","")+
+    '<div class="row"><a class="btn" href="/baby/?ref='+esc(id||"")+'#new">Expecting too? Make yours</a></div></section>';
+}
+
+/* ---------- views ---------- */
+var CUR=null, PREV=null;
+function vLanding(){
+  app.innerHTML=
+  '<section class="hero"><div class="eyebrow">Free · no app · no account</div><h1>One link for everyone waiting on your baby</h1>'+
+  '<p class="muted" style="font-size:18px;max-width:56ch">Let family and friends vote on your name shortlist, guess the arrival day and find every registry in one place. When baby arrives, the same link becomes the announcement.</p>'+
+  '<div class="row"><a class="btn" href="#new">Create your Baby Page</a><a class="btn ghost" href="/#top">Browse names first</a></div></section>'+
+  '<div class="feat"><div><h3>Name poll</h3><p>Your shortlist, with each name’s real U.S. rank and 10-year trend.</p></div><div><h3>Baby pool</h3><p>Everyone guesses the date, weight and first initial. Closest guess wins.</p></div><div><h3>Registry links</h3><p>Babylist, Amazon, Target or any store, together on one page.</p></div><div><h3>Announcement</h3><p>Flip the page to “Meet baby” and tell everyone at once.</p></div></div>'+
+  '<section class="card tint"><h2>How it works</h2><ol class="steps"><li><p><b>Make your page</b> in about a minute. Add your shortlist and registry links.</p></li><li><p><b>Send one link</b> to the family group chat.</p></li><li><p><b>Watch the votes and guesses</b> roll in, then announce with the same link.</p></li></ol></section>';
+}
+function namesFromFavs(){ var f=ls("bnp-favs")||[]; return f.slice(0,8).map(function(k){ var b=k.replace(/-[gb]$/,""); return b.charAt(0).toUpperCase()+b.slice(1); }); }
+function vNew(edit){
+  var p=edit? edit.page : {title:"",hosts:"",due:"",message:"",names:namesFromFavs().map(function(n){return {name:n};}),registries:[{label:"",url:""}],features:{poll:true,pool:true,registry:true}};
+  var list=(p.names||[]).map(function(n){return n.name;});
+  app.innerHTML=demoBanner()+
+  '<section class="hero"><div class="eyebrow">'+(edit?"Edit your page":"New Baby Page")+'</div><h1>'+(edit?"Update your Baby Page":"Make your Baby Page")+'</h1></section>'+
+  '<form class="card" id="f" novalidate>'+
+   '<div class="grid2"><label>Baby’s nickname <small>Shown at the top, for example “Baby Rivera” or “Little Bean”</small><input name="title" maxlength="60" required value="'+esc(p.title)+'" placeholder="Baby Rivera"></label>'+
+   '<label>From <small>Optional, first names only</small><input name="hosts" maxlength="80" value="'+esc(p.hosts)+'" placeholder="Maya &amp; Sam"></label></div>'+
+   '<label>Due date <small>Optional; turns on the baby pool countdown</small><input type="date" name="due" value="'+esc(p.due)+'"></label>'+
+   '<fieldset class="card tint" style="border:0;margin:0"><legend class="sr">Name shortlist</legend><h3>Name shortlist</h3><p class="muted" style="font-size:14px">Up to 12 names. '+(list.length&&!edit?"We added the names you saved on this site.":"Names you save on the site show up here.")+'</p>'+
+   '<div class="chips" id="chips"></div><div class="linkbox"><input id="nmin" list="nmlist" maxlength="30" placeholder="Add a name" autocomplete="off"><button class="btn small" type="button" id="nmadd">Add</button></div><datalist id="nmlist"></datalist></fieldset>'+
+   '<fieldset class="card tint" style="border:0;margin:0"><legend class="sr">Registry links</legend><h3>Registry links</h3><p class="muted" style="font-size:14px">Paste the share link from Babylist, Amazon, Target, Walmart or any store.</p><div id="regs" style="display:grid;gap:8px"></div><div><button class="btn small ghost" type="button" id="regadd">Add another registry</button></div></fieldset>'+
+   '<label>A note for your guests <small>Optional</small><textarea name="message" maxlength="400" placeholder="We can’t decide! Help us pick.">'+esc(p.message)+'</textarea></label>'+
+   '<div class="row"><label style="display:flex;gap:8px;align-items:center;font-weight:600"><input type="checkbox" name="poll" style="width:20px;min-height:0"'+(p.features.poll?" checked":"")+'>Name poll</label>'+
+   '<label style="display:flex;gap:8px;align-items:center;font-weight:600"><input type="checkbox" name="pool" style="width:20px;min-height:0"'+(p.features.pool?" checked":"")+'>Baby pool</label>'+
+   '<label style="display:flex;gap:8px;align-items:center;font-weight:600"><input type="checkbox" name="registry" style="width:20px;min-height:0"'+(p.features.registry?" checked":"")+'>Registry links</label></div>'+
+   '<p class="muted" style="font-size:13px">Anyone with the link can see this page. Please don’t add last names, addresses or photos.</p>'+
+   '<div class="row"><button class="btn" type="submit">'+(edit?"Save changes":"Create my page")+'</button>'+(edit?'<a class="btn ghost" href="#">Cancel</a>':"")+'</div><p id="err" class="down" hidden></p>'+
+  '</form>';
+  function chips(){ $("#chips").innerHTML=list.map(function(n,i){ return '<span class="chip">'+esc(n)+'<button type="button" data-rm="'+i+'" aria-label="Remove '+esc(n)+'">×</button></span>'; }).join("")||'<span class="muted" style="font-size:14px">No names yet</span>'; }
+  function addName(){ var v=$("#nmin").value.trim().replace(/\s+/g," "); if(!v) return; v=v.charAt(0).toUpperCase()+v.slice(1); if(list.length<12 && list.map(function(x){return x.toLowerCase();}).indexOf(v.toLowerCase())<0) list.push(v); $("#nmin").value=""; chips(); }
+  function regRow(r){ var d=document.createElement("div"); d.className="grid2"; d.innerHTML='<input data-rl maxlength="40" placeholder="Store, e.g. Babylist" value="'+esc(r.label)+'"><input data-ru type="url" inputmode="url" placeholder="https://…" value="'+esc(r.url)+'">'; $("#regs").appendChild(d); }
+  (p.registries&&p.registries.length? p.registries : [{label:"",url:""}]).forEach(regRow);
+  chips();
+  $("#chips").onclick=function(e){ var b=e.target.closest("[data-rm]"); if(b){ list.splice(+b.dataset.rm,1); chips(); } };
+  $("#nmadd").onclick=addName;
+  $("#nmin").onkeydown=function(e){ if(e.key==="Enter"){ e.preventDefault(); addName(); } };
+  $("#regadd").onclick=function(){ if($$("#regs > div").length<8) regRow({label:"",url:""}); };
+  names().then(function(d){ if(!d) return; var seen={}, o=[]; Object.keys(d.names).forEach(function(k){ var n=d.names[k].n; if(!seen[n]){ seen[n]=1; o.push('<option value="'+esc(n)+'">'); } }); $("#nmlist").innerHTML=o.join(""); });
+  $("#f").onsubmit=function(e){
+    e.preventDefault(); var f=e.target, err=$("#err"); err.hidden=true;
+    if(!f.title.value.trim()){ err.textContent="Add a nickname for your baby."; err.hidden=false; f.title.focus(); return; }
+    var regs=$$("#regs > div").map(function(d){ var u=$("[data-ru]",d).value.trim(); if(u && !/^https?:\/\//i.test(u)) u="https://"+u; return {label:$("[data-rl]",d).value.trim(),url:u}; }).filter(function(r){return r.url;});
+    var body={title:f.title.value.trim(),hosts:f.hosts.value.trim(),due:f.due.value,message:f.message.value.trim(),names:list.map(function(n){var x=lookup(n);return {name:n,key:x?x.key:""};}),registries:regs,features:{poll:f.poll.checked,pool:f.pool.checked,registry:f.registry.checked}};
+    var btn=$("button[type=submit]",f); btn.disabled=true;
+    (edit? api.update(edit.page.id,body,OWN[edit.page.id]).then(function(){ return {id:edit.page.id}; }) : api.create(body).then(function(j){ OWN[j.id]=j.edit; ls("bnp-baby-own",OWN); return j; }))
+      .then(function(j){ if(edit){ history.replaceState(null,"",LIVE===false? "/baby/#p/"+j.id : "/b/"+j.id); show(j.id,false); } else go(j.id,true); })
+      .catch(function(){ btn.disabled=false; err.textContent="Something went wrong. Please try again."; err.hidden=false; });
+  };
+}
+function go(id,fresh){ if(LIVE===false){ history.pushState(null,"","/baby/#p/"+id); } else history.pushState(null,"","/b/"+id); show(id,fresh); }
+
+function show(id,fresh){
+  var tok=OWN[id];
+  Promise.all([api.get(id,tok),names()]).then(function(a){ CUR=a[0]; render(fresh); }).catch(function(){
+    app.innerHTML=demoBanner()+'<section class="hero"><h1>We couldn’t find that Baby Page</h1><p class="muted">The link may be mistyped, or the page was deleted by its owner.</p><div class="row"><a class="btn" href="/baby/#new">Make a Baby Page</a></div></section>';
+  });
+}
+function render(fresh){
+  var d=CUR, p=d.page, id=p.id, f=p.features||{}, myVote=ls("bnp-vote-"+id)||[], myGuess=ls("bnp-guess-"+id);
+  d.leader=(p.names||[]).map(function(n){return n.name;}).sort(function(a,b){return ((d.votes||{})[b]||0)-((d.votes||{})[a]||0);})[0]||"";
+  var h=demoBanner();
+  if(d.owner){
+    var s=d.stats||{};
+    h+='<section class="card owner"><div class="eyebrow">Only you see this</div>'+
+      (fresh? '<div class="notice"><b>Your page is ready.</b> Send the link to your family group chat. Bookmark this page or keep the private edit link below so you can update it later.</div>' : "")+
+      '<h2>Share your page</h2><div class="linkbox"><input readonly value="'+esc(pageUrl(id))+'" aria-label="Your page link"></div>'+
+      shareButtons(pageUrl(id),(p.names&&p.names.length&&f.poll? "Help us name "+p.title+"!" : "Guess when "+p.title+" arrives!"),id)+
+      '<div class="stats"><div><b>'+(d.voters||0)+'</b><span>voted</span></div><div><b>'+((d.guesses||[]).length)+'</b><span>guesses</span></div><div><b>'+(s.shares||0)+'</b><span>shares</span></div><div><b>'+(s.children||0)+'</b><span>pages started from yours</span></div></div>'+
+      '<details><summary style="cursor:pointer;font-weight:700">Private edit link and settings</summary><div style="display:grid;gap:10px;margin-top:12px"><p class="muted" style="font-size:14px">Keep this link private. It lets you edit the page from another phone or computer.</p>'+
+      '<div class="linkbox"><input readonly value="'+esc(pageUrl(id)+"#edit="+OWN[id])+'" aria-label="Private edit link"><button class="btn small ghost" type="button" data-share="copy" data-url="'+esc(pageUrl(id)+"#edit="+OWN[id])+'">Copy</button></div>'+
+      '<div class="row"><a class="btn small ghost" href="'+(LIVE===false?"#p/"+id+"/edit":"#edit")+'">Edit page</a><button class="btn small ghost" type="button" id="del">Delete page</button></div></div></details>'+
+      (p.born? "" : '<details><summary style="cursor:pointer;font-weight:700">Baby’s here? Post the announcement</summary><form id="bornf" class="grid2" style="margin-top:12px"><label>Name<input name="name" required maxlength="40" value="'+esc(d.leader||"")+'"></label><label>Birthday<input type="date" name="date" required></label><label>Pounds<input type="number" name="lbs" min="0" max="20" step="1"></label><label>Ounces<input type="number" name="oz" min="0" max="15.9" step="0.1"></label><label>Girl or boy <small>Optional</small><select name="sex"><option value="">Rather not say</option><option value="g">Girl</option><option value="b">Boy</option></select></label><div style="align-self:end"><button class="btn" type="submit">Announce</button></div></form></details>')+
+      '</section>';
+  }
+  if(p.born){
+    var b=p.born, x=lookup(b.name);
+    h+='<section class="card born"><div class="eyebrow">Introducing</div><div class="big">'+esc(b.name)+'</div><p style="font-size:18px">'+(b.date?"Born "+esc(fmtDate(b.date)):"")+(b.lbs!=null?" · "+b.lbs+" lb"+(b.oz!=null?" "+b.oz+" oz":""):"")+'</p>'+
+      (p.hosts? '<p class="muted">With love from '+esc(p.hosts)+'</p>':"")+
+      (x? '<p class="muted">'+esc(b.name)+' is #'+x.rank.toLocaleString()+' in the U.S. · <a href="/#name-'+x.key+'">see the name’s history</a></p>':"")+
+      '<div class="row" style="justify-content:center">'+(x? '<a class="btn" href="/#name-'+x.key+'">Personalized gifts for '+esc(b.name)+'</a>':'')+'<a class="btn ghost" href="/#gear">Gift ideas for new parents</a></div>'+
+      shareButtons(pageUrl(id),"Meet "+b.name+"!",id)+'</section>';
+  } else {
+    h+='<section class="hero"><div class="eyebrow">'+(p.due? esc(countdown(p.due))+" · "+esc(fmtDate(p.due)) : "Baby on the way")+'</div><h1>'+esc(p.title)+'</h1>'+(p.hosts?'<p class="muted" style="font-size:18px">From '+esc(p.hosts)+'</p>':"")+(p.message?'<p style="font-size:18px;max-width:56ch">'+esc(p.message)+'</p>':"")+'</section>';
+  }
+  if(f.poll && p.names && p.names.length){
+    var voted=myVote.length>0, total=d.voters||0, votes=d.votes||{};
+    h+='<section class="card" id="poll"><h2>'+(p.born?"The name poll":"Help pick the name")+'</h2>';
+    if(!p.born && !voted){
+      h+='<p class="muted">Choose up to three favorites. Ranks are from official U.S. birth data.</p><form id="vf" class="names">'+
+        p.names.map(function(n,i){ var x=lookup(n.name); return '<label class="nm"><input type="checkbox" name="v" value="'+esc(n.name)+'"><span><span class="n">'+esc(n.name)+'</span><br>'+nameMeta(n)+'</span><span style="color:'+(x&&x.sex==="F"?"var(--girl)":"var(--boy)")+'">'+(x?spark(x.r):"")+'</span></label>'; }).join("")+
+        '<div class="row"><button class="btn" type="submit">Vote</button><span class="muted" style="font-size:14px">'+total+' '+(total===1?"person has":"people have")+' voted</span></div></form>';
+    } else {
+      var rows=p.names.map(function(n){return {n:n.name,c:votes[n.name]||0};}).sort(function(a,b){return b.c-a.c;}), top=rows[0].c||1;
+      h+='<p class="muted">'+total+' '+(total===1?"vote":"votes")+(voted?" · your picks: "+esc(myVote.join(", ")):"")+'</p><div style="display:grid;gap:8px">'+
+        rows.map(function(r,i){ return '<div class="bar'+(i===0&&r.c?" lead":"")+'"><span>'+esc(r.n)+'</span><span class="track"><span class="fill" style="display:block;width:'+Math.round(r.c/top*100)+'%"></span></span><span>'+r.c+'</span></div>'; }).join("")+'</div>'+
+        (!p.born? '<div class="row"><button class="btn small ghost" type="button" id="revote">Change my vote</button></div>':"")+
+        (voted&&!p.born? '<div class="notice"><b>Thanks for voting!</b> Who else should weigh in? Pass the poll along to family.'+shareButtons(pageUrl(id),"Help name "+p.title+"!",id)+'</div>':"");
+    }
+    h+='</section>';
+  }
+  if(f.pool){
+    var gs=(d.guesses||[]).slice(), best=null;
+    if(p.born && p.born.date){ var bd=new Date(p.born.date).getTime(); gs.forEach(function(g){ g._d=g.date? Math.abs(new Date(g.date).getTime()-bd)/864e5 : 999; if(p.born.lbs!=null && g.lbs!=null) g._d+=Math.abs((g.lbs+(g.oz||0)/16)-(p.born.lbs+(p.born.oz||0)/16)); }); gs.sort(function(a,b){return a._d-b._d;}); best=gs[0]; }
+    h+='<section class="card" id="pool"><h2>'+(p.born?"Baby pool results":"Baby pool")+'</h2>';
+    if(!p.born && !myGuess){
+      h+='<p class="muted">Guess the details. When baby arrives, the closest guess is crowned.</p><form id="gf" style="display:grid;gap:12px"><div class="grid2"><label>Your name<input name="who" maxlength="24" required placeholder="Aunt Jo"></label><label>Birthday guess<input type="date" name="date" required value="'+esc(p.due||"")+'"></label><label>Pounds<input type="number" name="lbs" min="0" max="20" step="1" placeholder="7"></label><label>Ounces<input type="number" name="oz" min="0" max="15.9" step="0.1" placeholder="8"></label><label>Girl or boy<select name="sex"><option value="">Not guessing</option><option value="g">Girl</option><option value="b">Boy</option></select></label><label>First initial<input name="initial" maxlength="1" placeholder="A"></label></div><div><button class="btn" type="submit">Submit my guess</button></div></form>';
+    }
+    if(gs.length){
+      h+='<table><thead><tr><th>Guest</th><th>Date</th><th>Weight</th><th>Sex</th><th>Initial</th></tr></thead><tbody>'+
+      gs.map(function(g){ return '<tr'+(g===best?' class="best"':"")+'><td>'+(g===best?"🏆 ":"")+esc(g.who)+'</td><td>'+esc(g.date?fmtDate(g.date).replace(/, \d{4}$/,""):"")+'</td><td>'+(g.lbs!=null?g.lbs+" lb"+(g.oz!=null?" "+g.oz+" oz":""):"")+'</td><td>'+(g.sex==="g"?"Girl":g.sex==="b"?"Boy":"")+'</td><td>'+esc(g.initial||"")+'</td></tr>'; }).join("")+'</tbody></table>';
+    } else if(myGuess||p.born){ h+='<p class="muted">No guesses yet.</p>'; }
+    if(myGuess && !p.born) h+='<div class="notice"><b>Your guess is in.</b> Get the rest of the family playing.'+shareButtons(pageUrl(id),"Guess when "+p.title+" arrives!",id)+'</div>';
+    h+='</section>';
+  }
+  if(f.registry && p.registries && p.registries.length){
+    h+='<section class="card" id="registry"><h2>Registries</h2><div class="reg">'+p.registries.map(function(r){ var host=""; try{ host=new URL(r.url).hostname.replace(/^www\./,""); }catch(e){} return '<a href="'+esc(r.url)+'" target="_blank" rel="nofollow ugc noopener">'+esc(r.label||host||"Registry")+'<span class="muted" style="font-weight:600;font-size:14px">'+esc(host)+' ↗</span></a>'; }).join("")+'</div>'+
+      '<p class="muted" style="font-size:14px">Want to give something personal? <a href="/#gear">See our gift guides</a>.</p></section>';
+  }
+  if(!d.owner) h+=passAlong(id);
+  app.innerHTML=h;
+  wire();
+}
+function wire(){
+  var p=CUR.page, id=p.id;
+  var vf=$("#vf"); if(vf){
+    vf.onchange=function(){ var c=$$("input:checked",vf); $$("input",vf).forEach(function(i){ i.disabled=!i.checked&&c.length>=3; }); };
+    vf.onsubmit=function(e){ e.preventDefault(); var picks=$$("input:checked",vf).map(function(i){return i.value;}); if(!picks.length){ toast("Pick at least one name"); return; }
+      api.vote(id,picks).then(function(){
+        // Count it here too: the shared tally can take up to a minute to include a new vote.
+        var v=CUR.votes=CUR.votes||{}; if(PREV){ PREV.forEach(function(n){ if(v[n]) v[n]--; }); } else CUR.voters=(CUR.voters||0)+1;
+        picks.forEach(function(n){ v[n]=(v[n]||0)+1; }); PREV=null; ls("bnp-vote-"+id,picks); render(); }).catch(function(){ toast("Couldn’t save your vote. Try again."); }); };
+  }
+  var rv=$("#revote"); if(rv) rv.onclick=function(){ PREV=ls("bnp-vote-"+id); ls("bnp-vote-"+id,[]); render(); };
+  var gf=$("#gf"); if(gf) gf.onsubmit=function(e){ e.preventDefault(); var f=e.target; if(!f.who.value.trim()||!f.date.value){ toast("Add your name and a date"); return; }
+    var g={who:f.who.value.trim(),date:f.date.value,lbs:f.lbs.value===""?null:+f.lbs.value,oz:f.oz.value===""?null:+f.oz.value,sex:f.sex.value,initial:f.initial.value.trim().toUpperCase()};
+    api.guess(id,g).then(function(){ ls("bnp-guess-"+id,g); (CUR.guesses=CUR.guesses||[]).push(g); render(); }).catch(function(){ toast("Couldn’t save your guess. Try again."); }); };
+  var bf=$("#bornf"); if(bf) bf.onsubmit=function(e){ e.preventDefault(); var f=e.target;
+    api.update(id,{born:{name:f.name.value.trim(),date:f.date.value,lbs:f.lbs.value===""?null:+f.lbs.value,oz:f.oz.value===""?null:+f.oz.value,sex:f.sex.value}},OWN[id]).then(function(){ show(id); }); };
+  var del=$("#del"); if(del) del.onclick=function(){ if(!confirm("Delete this Baby Page and all its votes and guesses? This can’t be undone.")) return;
+    api.del(id,OWN[id]).then(function(){ delete OWN[id]; ls("bnp-baby-own",OWN); location.href="/baby/"; }); };
+}
+
+/* ---------- router ---------- */
+function idFromUrl(){ var m=location.pathname.match(/^\/b\/([A-Za-z0-9]{8,16})/); if(m) return m[1]; m=location.hash.match(/^#p\/([A-Za-z0-9]{8,16})/); return m? m[1] : ""; }
+function route(){
+  var id=idFromUrl(), h=location.hash;
+  var em=h.match(/#edit=([A-Za-z0-9]{12,40})/);
+  if(id && em){ OWN[id]=em[1]; ls("bnp-baby-own",OWN); history.replaceState(null,"",location.pathname+location.search); h=""; }
+  window.scrollTo(0,0);
+  if(id){
+    if((h==="#edit"||/^#p\/[A-Za-z0-9]+\/edit$/.test(h)) && OWN[id]){ api.get(id,OWN[id]).then(function(d){ CUR=d; vNew(d); }); return; }
+    show(id); return;
+  }
+  if(h==="#new") return vNew();
+  vLanding();
+}
+window.addEventListener("hashchange",route);
+window.addEventListener("popstate",route);
+route();
+})();
+</script>
+</body>
+</html>
