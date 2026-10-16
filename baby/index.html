@@ -10,125 +10,203 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Mulish:wght@400;600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Parisienne&display=swap">
 <style>
-/* Layout: the main site's warm magazine look, narrowed to one column so a family page reads like a card you were handed. */
+/* Layout: printed baby-announcement stationery laid on a lilac table. One scalloped card with a foil-script name and a postmark leads; every other part is a quieter card of the same paper. */
 :root{
-  --bg:#FFFCF9; --surface:#FFF6F0; --card:#FFFFFF; --ink:#181A3A; --ink-2:#43476A; --muted:#71758F;
-  --line:#EEE4DB; --line-2:#DDD0C4; --brand:#D93F73; --brand-soft:#FCE4EC; --cta:#3D2C77; --cta-hover:#2D1F5E;
-  --girl:#C2416B; --girl-soft:#FCE3EB; --boy:#2F6DA8; --boy-soft:#E1EEFB; --up:#16805F; --down:#C0453E;
-  --lilac:#ECE6FA; --mint:#DDF2EA; --butter:#FFF1C9; --peach:#FFE7DA;
-  --serif:"DM Serif Display",Georgia,serif; --sans:"Mulish",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --table:#E7E1F1; --table-2:#DCD3EC; --paper:#FFFDF8; --paper-2:#FBF5EC; --kraft:#EADBC2;
+  --ink:#2B2350; --ink-2:#5A5280; --ink-3:#8A84A6; --rule:#D9CFE6;
+  --rose:#D9557E; --rose-deep:#B93C64; --rose-soft:#FBE4EC; --sage:#6E9C83; --sage-soft:#E3EFE7;
+  --foil-a:#B68A2E; --foil-b:#E9CF85; --foil-c:#9C7322;
+  --script:"Parisienne","Snell Roundhand",cursive; --serif:"Cormorant Garamond",Garamond,Georgia,serif;
+  --on-table:#2B2350; --on-table-2:#5A5280;
   color-scheme:light;
 }
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --bg:#14152A; --surface:#1C1D36; --card:#202240; --ink:#F2EEF6; --ink-2:#CFCBE0; --muted:#A3A2BF;
-  --line:#2E3052; --line-2:#3C3F66; --brand:#F0719C; --brand-soft:#3A2240; --cta:#9C8BF0; --cta-hover:#B3A6F5;
-  --girl:#F08AAB; --girl-soft:#3A2240; --boy:#7FB2E8; --boy-soft:#1E3050; --up:#5CC79E; --down:#F08A82;
-  --lilac:#2A2650; --mint:#173A33; --butter:#3A3218; --peach:#3A2A22; color-scheme:dark}}
-:root[data-theme="dark"]{
-  --bg:#14152A; --surface:#1C1D36; --card:#202240; --ink:#F2EEF6; --ink-2:#CFCBE0; --muted:#A3A2BF;
-  --line:#2E3052; --line-2:#3C3F66; --brand:#F0719C; --brand-soft:#3A2240; --cta:#9C8BF0; --cta-hover:#B3A6F5;
-  --girl:#F08AAB; --girl-soft:#3A2240; --boy:#7FB2E8; --boy-soft:#1E3050; --up:#5CC79E; --down:#F08A82;
-  --lilac:#2A2650; --mint:#173A33; --butter:#3A3218; --peach:#3A2A22; color-scheme:dark}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--table:#1E1A33;--table-2:#272144;--on-table:#EDE8F7;--on-table-2:#B9B2D3;color-scheme:dark}}
+:root[data-theme="dark"]{--table:#1E1A33;--table-2:#272144;--on-table:#EDE8F7;--on-table-2:#B9B2D3;color-scheme:dark}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 var(--sans)}
-a{color:var(--brand)}
-.wrap{max-width:720px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left));padding-right:max(16px,env(safe-area-inset-right))}
-header.top{border-bottom:1px solid var(--line);background:var(--bg)}
-header.top .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;max-width:1080px}
-.logo{display:flex;align-items:center;gap:8px;text-decoration:none;color:var(--ink);font-weight:800;font-size:17px}
-.logo-mark{width:30px;height:30px;border-radius:50%;background:var(--brand);display:grid;place-items:center}
-.logo i{font-style:normal;color:var(--brand)}
-header.top nav a{color:var(--ink-2);text-decoration:none;font-weight:700;font-size:14px;margin-left:18px}
-header.top nav a:hover{color:var(--brand)}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--table);color:var(--on-table);font:500 19px/1.6 var(--serif);
+  background-image:radial-gradient(circle at 20% 10%,var(--table-2) 0 1.5px,transparent 2px),radial-gradient(circle at 70% 60%,var(--table-2) 0 1.5px,transparent 2px);background-size:46px 46px,58px 58px}
+a{color:var(--rose-deep)}
+h1,h2,h3,p{margin:0}
+.wrap{max-width:680px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left));padding-right:max(16px,env(safe-area-inset-right))}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;max-width:980px}
+.logo{display:flex;align-items:center;gap:8px;text-decoration:none;color:var(--on-table);font:700 19px var(--serif)}
+.logo i{font-style:italic;color:var(--rose)}
+.logo svg{color:var(--rose)}
+header.top nav a{color:var(--on-table-2);text-decoration:none;font-weight:600;margin-left:18px}
+header.top nav a:hover{color:var(--rose)}
 @media (max-width:560px){header.top nav .opt{display:none}}
-main{padding-block:28px 72px;display:grid;gap:20px}
-h1,h2,h3{margin:0}
-h1{font-family:var(--serif);font-weight:400;font-size:clamp(34px,7vw,52px);line-height:1.05;text-wrap:balance}
-h2{font-family:var(--serif);font-weight:400;font-size:26px;line-height:1.15}
-h3{font-size:16px;font-weight:800}
-p{margin:0}
-.muted{color:var(--muted)}
-.eyebrow{font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--brand)}
-.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;display:grid;gap:14px}
-.card.tint{background:var(--surface)}
-.hero{display:grid;gap:12px;padding-block:8px}
-.btn{appearance:none;border:0;border-radius:999px;background:var(--cta);color:#fff;font:800 15px var(--sans);padding:12px 20px;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px}
-:root[data-theme="dark"] .btn{color:#14152A}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .btn{color:#14152A}}
-.btn:hover{background:var(--cta-hover)}
-.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--line-2)}
-.btn.ghost:hover{border-color:var(--ink)}
-.btn.small{padding:8px 14px;font-size:14px;min-height:36px}
+main{padding-block:12px 80px;display:grid;gap:28px}
+
+/* paper */
+.paper{position:relative;background:var(--paper);color:var(--ink);border-radius:3px;padding:36px 32px;
+  box-shadow:0 1px 1px rgba(43,35,80,.08),0 10px 24px -12px rgba(43,35,80,.35);
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .35 0 0 0 0 .3 0 0 0 0 .45 0 0 0 .05 0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E")}
+.paper::before{content:"";position:absolute;inset:12px;border:1px solid var(--rule);outline:1px solid var(--rule);outline-offset:-5px;pointer-events:none;border-radius:2px}
+.paper > *{position:relative}
+.paper h2{font:600 30px/1.15 var(--serif);text-align:center;color:var(--ink)}
+.paper .sub{text-align:center;color:var(--ink-2);font-style:italic;margin-top:6px}
+.tilt-l{transform:rotate(-.6deg)} .tilt-r{transform:rotate(.5deg)}
+@media (prefers-reduced-motion:reduce){.tilt-l,.tilt-r{transform:none}}
+
+/* the announcement card */
+.announce{border:12px solid transparent;border-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='36'%3E%3Ccircle cx='6' cy='6' r='6.5' fill='%23FFFDF8'/%3E%3Ccircle cx='6' cy='18' r='6.5' fill='%23FFFDF8'/%3E%3Ccircle cx='6' cy='30' r='6.5' fill='%23FFFDF8'/%3E%3Ccircle cx='18' cy='6' r='6.5' fill='%23FFFDF8'/%3E%3Ccircle cx='18' cy='18' r='6.5' fill='%23FFFDF8'/%3E%3Ccircle cx='18' cy='30' r='6.5' fill='%23FFFDF8'/%3E%3Ccircle cx='30' cy='6' r='6.5' fill='%23FFFDF8'/%3E%3Ccircle cx='30' cy='18' r='6.5' fill='%23FFFDF8'/%3E%3Ccircle cx='30' cy='30' r='6.5' fill='%23FFFDF8'/%3E%3Crect x='6' y='6' width='24' height='24' fill='%23FFFDF8'/%3E%3C/svg%3E") 12 round;
+  background-clip:padding-box;border-radius:0;padding:44px 28px 40px;text-align:center;filter:drop-shadow(0 12px 18px rgba(43,35,80,.25));box-shadow:none}
+.announce::before{inset:4px;border-color:var(--rose);outline-color:var(--rose)}
+.announce .lead{font-style:italic;color:var(--ink-2);font-size:21px}
+.foil{font:400 clamp(58px,15vw,96px)/1.05 var(--script);padding:6px 10px 10px;display:inline-block;
+  background:linear-gradient(100deg,var(--foil-c) 0%,var(--foil-a) 22%,var(--foil-b) 42%,var(--foil-a) 58%,var(--foil-c) 78%,var(--foil-b) 100%);background-size:200% 100%;
+  -webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;text-wrap:balance}
+.announce .from{margin-top:2px;font-size:20px}
+.announce .note{max-width:34ch;margin:18px auto 0;font-style:italic;font-size:20px;color:var(--ink-2)}
+.flourish{display:block;margin:14px auto 0;color:var(--rose)}
+.postmark{position:absolute;top:-6px;right:-4px;width:104px;height:104px;color:var(--rose);transform:rotate(12deg);opacity:.9}
+@media (max-width:520px){.postmark{width:84px;height:84px;top:-10px;right:-8px}}
+.stats-line{margin-top:10px;font-size:22px;font-weight:600}
+
+/* type on paper */
+.meta{font-size:15px;color:var(--ink-2)} .meta a{color:inherit}
+.up{color:var(--sage);font-weight:700} .down{color:var(--rose-deep);font-weight:700}
+.muted{color:var(--ink-3)}
+.center{text-align:center}
+
+/* buttons */
+.btn{appearance:none;border:0;border-radius:999px;background:var(--rose);color:#fff;font:700 18px var(--serif);letter-spacing:.01em;padding:11px 26px;min-height:46px;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:8px;box-shadow:inset 0 -2px 0 rgba(0,0,0,.12)}
+.btn:hover{background:var(--rose-deep)}
+.btn.ink{background:var(--ink)} .btn.ink:hover{background:#3c3270}
+.btn.line{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink)}
+.btn.line:hover{background:var(--paper-2)}
+.btn.small{font-size:16px;padding:7px 16px;min-height:38px}
 .btn:disabled{opacity:.55;cursor:default}
 .row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
-.feat{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-@media (max-width:560px){.feat{grid-template-columns:1fr}}
-.feat div{border-radius:14px;padding:16px;display:grid;gap:4px}
-.feat div:nth-child(1){background:var(--lilac)} .feat div:nth-child(2){background:var(--mint)}
-.feat div:nth-child(3){background:var(--butter)} .feat div:nth-child(4){background:var(--peach)}
-.steps{counter-reset:s;display:grid;gap:10px;margin:0;padding:0;list-style:none}
-.steps li{counter-increment:s;display:grid;grid-template-columns:32px 1fr;gap:12px;align-items:start}
-.steps li::before{content:counter(s);width:32px;height:32px;border-radius:50%;background:var(--brand-soft);color:var(--brand);font-weight:800;display:grid;place-items:center}
-label{font-weight:700;font-size:14px;display:grid;gap:6px}
-label small{font-weight:400;color:var(--muted)}
-input,select,textarea{font:16px var(--sans);color:var(--ink);background:var(--bg);border:1.5px solid var(--line-2);border-radius:12px;padding:10px 12px;width:100%;min-height:44px}
-input:focus,select:focus,textarea:focus,.btn:focus-visible,a:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
-textarea{min-height:80px;resize:vertical}
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-@media (max-width:560px){.grid2{grid-template-columns:1fr}}
-.chips{display:flex;flex-wrap:wrap;gap:8px}
-.chip{display:inline-flex;align-items:center;gap:6px;background:var(--surface);border:1px solid var(--line-2);border-radius:999px;padding:6px 6px 6px 12px;font-weight:700}
-.chip button{border:0;background:var(--line);color:var(--ink);border-radius:50%;width:24px;height:24px;cursor:pointer;font-size:14px;line-height:1}
-.banner{background:var(--butter);border-radius:14px;padding:12px 16px;font-size:14px}
-.notice{background:var(--mint);border-radius:14px;padding:14px 16px;display:grid;gap:10px}
-.owner{border:2px dashed var(--line-2)}
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;text-align:center}
-.stats b{display:block;font-family:var(--serif);font-weight:400;font-size:28px;line-height:1.1}
-.stats span{font-size:12px;color:var(--muted)}
-@media (max-width:420px){.stats{grid-template-columns:repeat(2,1fr)}}
-.names{display:grid;gap:10px}
-.nm{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;border:1.5px solid var(--line);border-radius:14px;padding:12px 14px;cursor:pointer}
-.nm:has(input:checked){border-color:var(--brand);background:var(--brand-soft)}
-.nm input{width:22px;height:22px;min-height:0;accent-color:var(--brand)}
-.nm .n{font-family:var(--serif);font-size:24px;line-height:1.1}
-.nm .meta{font-size:13px;color:var(--muted)}
-.nm .meta a{color:inherit}
-.up{color:var(--up);font-weight:800}.down{color:var(--down);font-weight:800}
-.bar{display:grid;grid-template-columns:110px 1fr 44px;gap:10px;align-items:center;font-weight:700}
-.bar .track{height:14px;border-radius:7px;background:var(--surface);overflow:hidden}
-.bar .fill{height:100%;background:var(--brand);border-radius:7px}
-.bar.lead .fill{background:var(--cta)}
-.bar span:last-child{text-align:right;color:var(--muted);font-weight:600}
-table{width:100%;border-collapse:collapse;font-size:14px}
-th,td{text-align:left;padding:8px 6px;border-bottom:1px solid var(--line)}
-th{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
-tr.best td{background:var(--butter);font-weight:800}
-.reg{display:grid;gap:8px}
-.reg a{display:flex;justify-content:space-between;align-items:center;border:1.5px solid var(--line);border-radius:14px;padding:12px 16px;text-decoration:none;color:var(--ink);font-weight:800}
-.reg a:hover{border-color:var(--brand)}
-.born{background:linear-gradient(var(--brand-soft),var(--card));text-align:center;padding:32px 22px}
-.born .big{font-family:var(--serif);font-size:clamp(44px,10vw,72px);line-height:1}
-.share{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px}
-.linkbox{display:flex;gap:8px}
-.linkbox input{font-size:14px}
-.pass{background:var(--lilac);border-radius:18px;padding:22px;display:grid;gap:12px}
-footer{border-top:1px solid var(--line);padding-block:24px 40px;font-size:13px;color:var(--muted)}
+.row.c{justify-content:center}
+:focus-visible{outline:2px solid var(--rose);outline-offset:3px}
+
+/* place cards (name poll) */
+.places{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:22px}
+@media (max-width:480px){.places{grid-template-columns:1fr}}
+.place{position:relative;display:grid;justify-items:center;text-align:center;gap:2px;padding:18px 12px 14px;background:var(--paper-2);border:1px solid var(--rule);border-radius:3px;cursor:pointer;transition:border-color .15s, background .15s}
+.place::after{content:"";position:absolute;left:12%;right:12%;top:50%;border-top:1px dashed rgba(43,35,80,.10)}
+.place input{position:absolute;opacity:0;pointer-events:none}
+.place .n{font:400 44px/1.1 var(--script);color:var(--ink);position:relative;z-index:1}
+.place .meta{position:relative;z-index:1}
+.place svg.spark{position:relative;z-index:1;margin-top:4px}
+.place .seal{position:absolute;top:-10px;right:-10px;width:34px;height:34px;border-radius:50%;background:var(--rose);color:#fff;display:none;place-items:center;font-size:18px;box-shadow:0 2px 0 var(--rose-deep);z-index:2}
+.place:has(input:checked){border-color:var(--rose);background:var(--rose-soft)}
+.place:has(input:checked) .seal{display:grid}
+.place:has(input:focus-visible){outline:2px solid var(--rose);outline-offset:3px}
+.place:has(input:disabled:not(:checked)){opacity:.5;cursor:default}
+
+/* results ribbons */
+.ribbons{display:grid;gap:12px;margin-top:20px}
+.rib{display:grid;grid-template-columns:minmax(90px,auto) 1fr 40px;gap:12px;align-items:center}
+.rib .nm{font:400 30px/1 var(--script)}
+.rib .track{height:16px;background:var(--paper-2);border:1px solid var(--rule)}
+.rib .fill{display:block;height:100%;background:var(--rose-soft);border-right:2px solid var(--rose)}
+.rib.lead .fill{background:linear-gradient(90deg,var(--foil-b),var(--foil-a));border-right-color:var(--foil-c)}
+.rib .c{text-align:right;font-weight:700}
+
+/* fill-in-the-blank pool card */
+.blanks{margin-top:20px;font-size:22px;line-height:2.3;text-align:center}
+.blanks input,.blanks select{font:600 21px var(--serif);color:var(--rose-deep);background:transparent;border:0;border-bottom:1.5px solid var(--ink);border-radius:0;padding:0 4px;text-align:center;min-height:0;height:36px;vertical-align:baseline}
+.blanks input[type=date]{width:190px}
+.blanks input.num{width:58px} .blanks input.init{width:44px;text-transform:uppercase} .blanks input.who{width:180px}
+.blanks select{width:auto}
+.guesses{width:100%;border-collapse:collapse;margin-top:22px;font-size:17px}
+.guesses th{font-weight:600;font-style:italic;color:var(--ink-2);text-align:left;border-bottom:1px solid var(--rule);padding:6px}
+.guesses td{padding:8px 6px;border-bottom:1px dashed var(--rule)}
+.guesses tr.best td{background:linear-gradient(90deg,rgba(233,207,133,.45),rgba(233,207,133,.1));font-weight:700}
+
+/* registry tags */
+.tags{display:grid;gap:12px;margin-top:20px}
+.tag{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 20px;text-decoration:none;color:var(--ink);font-weight:700;font-size:20px;background:var(--paper-2);border:1.5px dashed var(--ink-3);border-radius:3px}
+.tag:hover{border-color:var(--rose);color:var(--rose-deep)}
+.tag small{font-weight:500;font-size:15px;color:var(--ink-2)}
+
+/* postcard */
+.postcard{background:var(--paper);color:var(--ink);padding:30px 28px;border-radius:3px;display:grid;gap:14px;box-shadow:0 10px 24px -12px rgba(43,35,80,.35);
+  background-image:repeating-linear-gradient(135deg,var(--rose) 0 10px,var(--paper) 10px 20px,#7E9CC9 20px 30px,var(--paper) 30px 40px);background-size:100% 8px;background-repeat:no-repeat;background-position:0 0}
+.postcard > div.body{display:grid;grid-template-columns:1fr auto;gap:18px;align-items:start}
+.stamp{width:78px;height:92px;background:var(--rose-soft);border:2px dotted var(--rose);display:grid;place-items:center;transform:rotate(4deg);color:var(--rose)}
+.postcard h2{font:600 28px/1.15 var(--serif)}
+.postcard p{color:var(--ink-2)}
+
+/* host tag (owner) */
+.host{background:var(--kraft);color:var(--ink);border-radius:3px 3px 3px 3px;padding:28px 26px 24px;display:grid;gap:14px;box-shadow:0 10px 24px -14px rgba(43,35,80,.45);position:relative;
+  clip-path:polygon(0 0,calc(100% - 26px) 0,100% 26px,100% 100%,0 100%)}
+.host h2{font:600 26px/1.2 var(--serif)}
+.host .hole{position:absolute;top:16px;right:38px;width:14px;height:14px;border-radius:50%;background:var(--table);box-shadow:inset 0 0 0 2px rgba(43,35,80,.25)}
+.host .linkbox{display:flex;gap:8px}
+.host input{font:600 16px var(--serif);background:var(--paper);border:1px solid rgba(43,35,80,.25);border-radius:3px;padding:8px 10px;width:100%;color:var(--ink)}
+.counts{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;text-align:center}
+.counts b{display:block;font:400 34px/1 var(--script);color:var(--rose-deep)}
+.counts span{font-size:14px;color:var(--ink-2)}
+@media (max-width:440px){.counts{grid-template-columns:repeat(2,1fr)}}
+details summary{cursor:pointer;font-weight:700}
+details[open] summary{margin-bottom:10px}
+.ready{background:var(--paper);border-radius:3px;padding:12px 16px;font-style:italic}
+
+/* share */
+.share{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.thanks{margin-top:22px;padding:18px;border-top:1px solid var(--rule);text-align:center;display:grid;gap:10px}
+.thanks .script{font:400 38px/1 var(--script);color:var(--rose)}
+
+/* forms on paper */
+.form{display:grid;gap:22px;margin-top:8px}
+.field{display:grid;gap:4px}
+.field > span{font-weight:700}
+.field small{font-style:italic;color:var(--ink-2);font-size:16px}
+.field input,.field textarea,.field select{font:600 20px var(--serif);color:var(--ink);background:transparent;border:0;border-bottom:1.5px solid var(--ink-3);border-radius:0;padding:6px 2px;width:100%}
+.field input:focus,.field textarea:focus{border-bottom-color:var(--rose);outline:none}
+.field textarea{min-height:70px;resize:vertical}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media (max-width:520px){.two{grid-template-columns:1fr}}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.chip{display:inline-flex;align-items:center;gap:6px;background:var(--paper-2);border:1px solid var(--rule);border-radius:999px;padding:2px 4px 2px 14px;font:400 26px/1.3 var(--script)}
+.chip button{border:0;background:var(--rule);color:var(--ink);border-radius:50%;width:26px;height:26px;cursor:pointer;font:600 16px var(--serif)}
+.addname{display:flex;gap:8px;align-items:end;margin-top:8px}
+.checks{display:flex;flex-wrap:wrap;gap:8px 18px}
+.checks label{display:flex;gap:8px;align-items:center;font-weight:600}
+.checks input{width:18px;height:18px;accent-color:var(--rose)}
+.err{color:var(--rose-deep);font-weight:700}
+
+/* landing */
+.hero{text-align:center;display:grid;gap:14px;padding-top:12px;color:var(--on-table)}
+.hero h1{font:600 clamp(36px,7vw,54px)/1.08 var(--serif);text-wrap:balance}
+.hero p{font-size:21px;color:var(--on-table-2);max-width:40ch;margin:0 auto}
+.trio{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+@media (max-width:560px){.trio{grid-template-columns:1fr}}
+.mini{background:var(--paper);color:var(--ink);padding:20px 22px;border-radius:3px;box-shadow:0 8px 18px -12px rgba(43,35,80,.35);display:grid;gap:4px}
+.mini h3{font:400 34px/1.1 var(--script);color:var(--rose-deep)}
+.mini p{color:var(--ink-2);font-size:18px}
+.steps{display:grid;gap:12px;margin-top:16px;padding:0;list-style:none;counter-reset:s}
+.steps li{counter-increment:s;display:grid;grid-template-columns:44px 1fr;gap:12px;align-items:baseline}
+.steps li::before{content:counter(s);font:400 34px/1 var(--script);color:var(--rose);text-align:center}
+
+.banner{background:var(--paper);color:var(--ink);border-left:4px solid var(--foil-a);padding:12px 16px;font-size:17px;border-radius:3px}
+footer{padding-block:24px 48px;font-size:16px;color:var(--on-table-2);text-align:center}
 footer .wrap{display:grid;gap:6px}
-.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
-.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:10px 18px;border-radius:999px;font-weight:700;font-size:14px;z-index:9}
-.spark{vertical-align:middle}
+footer a{color:inherit}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--ink);color:#fff;padding:10px 20px;border-radius:999px;font-weight:700;z-index:9}
+
+/* confetti: only after a vote or on the announcement */
+.confetti{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:8}
+.confetti i{position:absolute;top:-12px;width:8px;height:14px;border-radius:2px;animation:fall 2.6s cubic-bezier(.2,.6,.4,1) forwards}
+@keyframes fall{to{transform:translate3d(var(--dx),105vh,0) rotate(var(--r));opacity:.9}}
+@media (prefers-reduced-motion:reduce){.confetti{display:none}}
 </style>
 </head>
 <body>
 <header class="top"><div class="wrap">
-  <a class="logo" href="/"><span class="logo-mark"><svg width="17" height="17" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12 21s-7.8-4.8-9.6-9.6C1 7.9 3.1 4.2 6.8 4.2c2.1 0 3.8 1.2 5.2 3.1 1.4-1.9 3.1-3.1 5.2-3.1 3.7 0 5.8 3.7 4.4 7.2C19.8 16.2 12 21 12 21z"/></svg></span>babyname<i>popularity</i></a>
-  <nav aria-label="Main"><a class="opt" href="/#top">Top names</a><a class="opt" href="/#gear">Baby gear</a><a href="/baby/">Baby Page</a></nav>
+  <a class="logo" href="/"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-7.8-4.8-9.6-9.6C1 7.9 3.1 4.2 6.8 4.2c2.1 0 3.8 1.2 5.2 3.1 1.4-1.9 3.1-3.1 5.2-3.1 3.7 0 5.8 3.7 4.4 7.2C19.8 16.2 12 21 12 21z"/></svg>babyname<i>popularity</i></a>
+  <nav aria-label="Main"><a class="opt" href="/#top">Top names</a><a class="opt" href="/#gear">Baby gear</a><a href="/baby/#new">Make a Baby Page</a></nav>
 </div></header>
-<main class="wrap" id="app" aria-live="polite"><p class="muted">Loading…</p></main>
+<main class="wrap" id="app" aria-live="polite"><p class="center">Opening…</p></main>
 <footer><div class="wrap">
-  <p>Baby Pages are private to people who have the link. They are never listed on search engines. Use a first name or nickname, not your full name or address.</p>
+  <p>Baby Pages are private to people who have the link and are never listed on search engines. Please use a first name or nickname, not a full name or address.</p>
   <p>Registry links go to the store that holds the registry. BabyNamePopularity may earn a commission from gift links on its own pages.</p>
   <p><a href="/">BabyNamePopularity.com</a></p>
 </div></footer>
@@ -144,14 +222,36 @@ function $(s,el){ return (el||document).querySelector(s); }
 function $$(s,el){ return Array.prototype.slice.call((el||document).querySelectorAll(s)); }
 function ls(k,v){ try{ if(v===undefined) return JSON.parse(localStorage.getItem(k)||"null"); localStorage.setItem(k,JSON.stringify(v)); }catch(e){ return null; } }
 function rid(n){ var a="ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnpqrstuvwxyz23456789",s="",b=new Uint8Array(n); crypto.getRandomValues(b); for(var i=0;i<n;i++) s+=a[b[i]%a.length]; return s; }
-function toast(t){ var d=document.createElement("div"); d.className="toast"; d.textContent=t; document.body.appendChild(d); setTimeout(function(){d.remove();},2200); }
-function fmtDate(d){ if(!d) return ""; var p=d.split("-"); return ["January","February","March","April","May","June","July","August","September","October","November","December"][+p[1]-1]+" "+(+p[2])+", "+p[0]; }
+function toast(t){ var d=document.createElement("div"); d.className="toast"; d.setAttribute("role","status"); d.textContent=t; document.body.appendChild(d); setTimeout(function(){d.remove();},2200); }
+var MONTHS=["January","February","March","April","May","June","July","August","September","October","November","December"];
+function fmtDate(d){ if(!d) return ""; var p=d.split("-"); return MONTHS[+p[1]-1]+" "+(+p[2])+", "+p[0]; }
 function daysFrom(d){ if(!d) return null; var t=new Date(); t.setHours(0,0,0,0); var p=d.split("-"); return Math.round((new Date(+p[0],+p[1]-1,+p[2])-t)/864e5); }
-function countdown(d){ var n=daysFrom(d); if(n===null) return ""; if(n>13) return "Due in "+Math.round(n/7)+" weeks"; if(n>1) return "Due in "+n+" days"; if(n===1) return "Due tomorrow"; if(n===0) return "Due today"; return "Any day now"; }
+function countdown(d){ var n=daysFrom(d); if(n===null) return ""; if(n>13) return Math.round(n/7)+" weeks to go"; if(n>1) return n+" days to go"; if(n===1) return "Due tomorrow"; if(n===0) return "Due today"; return "Any day now"; }
+function confetti(){
+  if(matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  var box=document.createElement("div"), cols=["#D9557E","#E9CF85","#B68A2E","#7E9CC9","#6E9C83","#FBE4EC"];
+  box.className="confetti";
+  for(var i=0;i<70;i++){ var c=document.createElement("i"); c.style.left=(Math.random()*100)+"%"; c.style.background=cols[i%cols.length];
+    c.style.setProperty("--dx",(Math.random()*160-80)+"px"); c.style.setProperty("--r",(Math.random()*900-450)+"deg"); c.style.animationDelay=(Math.random()*.6)+"s"; box.appendChild(c); }
+  document.body.appendChild(box); setTimeout(function(){ box.remove(); },3600);
+}
 var VOTER=ls("bnp-voter"); if(!VOTER){ VOTER=rid(16); ls("bnp-voter",VOTER); }
 var OWN=ls("bnp-baby-own")||{};
 var REF=(new URLSearchParams(location.search)).get("ref")||ls("bnp-baby-ref")||"";
 if(REF){ ls("bnp-baby-ref",REF); }
+
+/* ---------- stationery pieces ---------- */
+function postmark(due){
+  if(!due) return "";
+  var p=due.split("-"), top="DUE "+MONTHS[+p[1]-1].slice(0,3).toUpperCase()+" "+(+p[2]), bottom=p[0];
+  return '<svg class="postmark" viewBox="0 0 120 120" aria-hidden="true"><defs><path id="pmT" d="M20 60a40 40 0 0 1 80 0"/><path id="pmB" d="M16 60a44 44 0 0 0 88 0"/></defs>'+
+    '<circle cx="60" cy="60" r="56" fill="none" stroke="currentColor" stroke-width="2.5"/><circle cx="60" cy="60" r="47" fill="none" stroke="currentColor" stroke-width="1"/>'+
+    '<text font-family="Cormorant Garamond,Georgia,serif" font-weight="700" font-size="14" letter-spacing="2" fill="currentColor"><textPath href="#pmT" startOffset="50%" text-anchor="middle">'+esc(top)+'</textPath></text>'+
+    '<text font-family="Cormorant Garamond,Georgia,serif" font-weight="700" font-size="14" letter-spacing="3" fill="currentColor"><textPath href="#pmB" startOffset="50%" text-anchor="middle">'+esc(bottom)+'</textPath></text>'+
+    '<path d="M60 74s-11-6.8-13.5-13.5c-1.9-4.9 1-10 6.2-10 2.9 0 5.3 1.6 7.3 4.3 2-2.7 4.4-4.3 7.3-4.3 5.2 0 8.1 5.1 6.2 10C71 67.2 60 74 60 74z" fill="currentColor"/></svg>';
+}
+var FLOURISH='<svg class="flourish" width="140" height="18" viewBox="0 0 140 18" aria-hidden="true"><path d="M2 9c18 0 26-7 40-7s16 10 28 10 14-10 28-10 22 7 40 7" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="70" cy="9" r="3" fill="currentColor"/></svg>';
+var STAMP='<div class="stamp" aria-hidden="true"><svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-7.8-4.8-9.6-9.6C1 7.9 3.1 4.2 6.8 4.2c2.1 0 3.8 1.2 5.2 3.1 1.4-1.9 3.1-3.1 5.2-3.1 3.7 0 5.8 3.7 4.4 7.2C19.8 16.2 12 21 12 21z"/></svg></div>';
 
 /* ---------- name data from the main site ---------- */
 var H=null, Hp=null;
@@ -163,16 +263,16 @@ function lookup(name){
   if(!e) return null; var key=(e===g? b+"-g" : b+"-b"), r=e.r, last=rk(e), ten=r[r.length-11]||0;
   return { key:key, sex:e.s, rank:last, ten:ten, r:r.slice(-30) };
 }
-function spark(r){
-  var w=90,h=26, v=r.map(function(x){return x>0? Math.log(x)/Math.LN10 : null;}), max=4, pts=[];
+function spark(r,color){
+  var w=96,h=24, v=r.map(function(x){return x>0? Math.log(x)/Math.LN10 : null;}), max=4, pts=[];
   v.forEach(function(x,i){ if(x!==null) pts.push((i*(w/(v.length-1))).toFixed(1)+","+(2+x/max*(h-4)).toFixed(1)); });
-  return pts.length>1? '<svg class="spark" width="'+w+'" height="'+h+'" viewBox="0 0 '+w+' '+h+'" aria-hidden="true"><polyline points="'+pts.join(" ")+'" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>' : "";
+  return pts.length>1? '<svg class="spark" width="'+w+'" height="'+h+'" viewBox="0 0 '+w+' '+h+'" aria-hidden="true"><polyline points="'+pts.join(" ")+'" fill="none" stroke="'+color+'" stroke-width="1.6"/></svg>' : "";
 }
 function nameMeta(n){
-  var x=lookup(n.name); if(!x) return '<span class="meta">Rare or unranked in U.S. data, so it will stand out</span>';
+  var x=lookup(n.name); if(!x) return '<span class="meta">Rare in U.S. records, so it will stand out</span>';
   var tr = x.ten && x.rank ? (x.ten-x.rank) : 0;
-  var mv = tr>0? ' · <span class="up">▲ up '+tr.toLocaleString()+(tr===1?' spot':' spots')+' in 10 yrs</span>' : tr<0? ' · <span class="down">▼ down '+(-tr).toLocaleString()+(tr===-1?' spot':' spots')+' in 10 yrs</span>' : "";
-  return '<span class="meta">#'+x.rank.toLocaleString()+' for '+(x.sex==="F"?"girls":"boys")+mv+' · <a href="/#name-'+x.key+'" target="_blank" rel="noopener">history</a></span>';
+  var mv = tr>0? '<br><span class="up">Up '+tr.toLocaleString()+(tr===1?' spot':' spots')+' in 10 years</span>' : tr<0? '<br><span class="down">Down '+(-tr).toLocaleString()+(tr===-1?' spot':' spots')+' in 10 years</span>' : "";
+  return '<span class="meta">No. '+x.rank.toLocaleString()+' for '+(x.sex==="F"?"girls":"boys")+mv+'</span>';
 }
 
 /* ---------- storage: the site API, or this browser in preview mode ---------- */
@@ -205,20 +305,27 @@ var api={
   guess:function(id,g){ return LIVE? req("POST","/"+id+"/guess",Object.assign({voter:VOTER},g)) : demo.guess(id,g); },
   share:function(id){ return (LIVE? req("POST","/"+id+"/event",{type:"share"}) : demo.share(id)).catch(function(){}); }
 };
-function demoBanner(){ return LIVE===false? '<div class="banner"><b>Preview mode.</b> Baby Pages are saved only in this browser until the site\'s storage is switched on, so links will not open for other people yet.</div>' : ""; }
+function demoBanner(){ return LIVE===false? '<div class="banner"><b>Preview mode.</b> Baby Pages are saved only in this browser until the site\'s storage is switched on, so links won\'t open for other people yet.</div>' : ""; }
 
-/* ---------- sharing ---------- */
+/* ---------- sharing: the words people actually receive ---------- */
 function pageUrl(id){ return location.origin+"/b/"+id; }
 function inviteUrl(id){ return location.origin+"/baby/?ref="+encodeURIComponent(id||""); }
-function shareButtons(url,text,id){
+function msgFor(p,kind){
+  var t=p.title||"our baby";
+  if(kind==="arrived") return "💕 "+(p.born&&p.born.name? p.born.name+" is here!" : t+" is here!")+" Come meet our little one:";
+  if(kind==="pool") return "🍼 Place your bets! Guess when "+t+" arrives:";
+  if(kind==="invite") return "Expecting? Make your own free Baby Page for name votes, a baby pool and all your registries:";
+  return "👶 We need your vote! Help us name "+t+" and guess the big day:";
+}
+function shareButtons(url,text){
   var t=encodeURIComponent(text+" "+url);
   return '<div class="share">'+
-    (navigator.share? '<button class="btn small" type="button" data-share="native" data-url="'+esc(url)+'" data-text="'+esc(text)+'">Share…</button>' : "")+
-    '<a class="btn small ghost" data-share="sms" href="sms:?&body='+t+'">Text message</a>'+
-    '<a class="btn small ghost" data-share="whatsapp" href="https://wa.me/?text='+t+'" target="_blank" rel="noopener">WhatsApp</a>'+
-    '<a class="btn small ghost" data-share="email" href="mailto:?subject='+encodeURIComponent(text)+'&body='+t+'">Email</a>'+
-    '<a class="btn small ghost" data-share="facebook" href="https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(url)+'" target="_blank" rel="noopener">Facebook</a>'+
-    '<button class="btn small ghost" type="button" data-share="copy" data-url="'+esc(url)+'">Copy link</button>'+
+    (navigator.share? '<button class="btn small" type="button" data-share="native" data-url="'+esc(url)+'" data-text="'+esc(text)+'">Share</button>' : "")+
+    '<a class="btn small line" data-share="sms" href="sms:?&body='+t+'">Text</a>'+
+    '<a class="btn small line" data-share="whatsapp" href="https://wa.me/?text='+t+'" target="_blank" rel="noopener">WhatsApp</a>'+
+    '<a class="btn small line" data-share="email" href="mailto:?subject='+encodeURIComponent(text.replace(/^\S+\s/,""))+'&body='+t+'">Email</a>'+
+    '<a class="btn small line" data-share="facebook" href="https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(url)+'" target="_blank" rel="noopener">Facebook</a>'+
+    '<button class="btn small line" type="button" data-share="copy" data-url="'+esc(url)+'">Copy link</button>'+
   '</div>';
 }
 document.addEventListener("click",function(ev){
@@ -228,45 +335,49 @@ document.addEventListener("click",function(ev){
   if(b.dataset.share==="native"){ ev.preventDefault(); navigator.share({title:b.dataset.text,text:b.dataset.text,url:b.dataset.url}).catch(function(){}); }
 });
 function passAlong(id){
-  return '<section class="pass" aria-labelledby="pass-h"><h2 id="pass-h">Know someone else who’s expecting?</h2>'+
-    '<p>Send them their own free Baby Page: a name poll with real popularity data, a baby pool and one place for every registry.</p>'+
-    shareButtons(inviteUrl(id),"Make a free Baby Page for your little one","")+
-    '<div class="row"><a class="btn" href="/baby/?ref='+esc(id||"")+'#new">Expecting too? Make yours</a></div></section>';
+  return '<section class="postcard tilt-r" aria-labelledby="pass-h"><div class="body"><div><h2 id="pass-h">Know someone else who’s expecting?</h2>'+
+    '<p style="margin-top:8px">Send them a Baby Page of their own. It’s free: name votes with real popularity data, a baby pool and every registry in one place.</p></div>'+STAMP+'</div>'+
+    shareButtons(inviteUrl(id),msgFor({},"invite"))+
+    '<div class="row c"><a class="btn ink" href="/baby/?ref='+esc(id||"")+'#new">Expecting too? Make yours</a></div></section>';
 }
 
 /* ---------- views ---------- */
 var CUR=null, PREV=null;
 function vLanding(){
   app.innerHTML=
-  '<section class="hero"><div class="eyebrow">Free · no app · no account</div><h1>One link for everyone waiting on your baby</h1>'+
-  '<p class="muted" style="font-size:18px;max-width:56ch">Let family and friends vote on your name shortlist, guess the arrival day and find every registry in one place. When baby arrives, the same link becomes the announcement.</p>'+
-  '<div class="row"><a class="btn" href="#new">Create your Baby Page</a><a class="btn ghost" href="/#top">Browse names first</a></div></section>'+
-  '<div class="feat"><div><h3>Name poll</h3><p>Your shortlist, with each name’s real U.S. rank and 10-year trend.</p></div><div><h3>Baby pool</h3><p>Everyone guesses the date, weight and first initial. Closest guess wins.</p></div><div><h3>Registry links</h3><p>Babylist, Amazon, Target or any store, together on one page.</p></div><div><h3>Announcement</h3><p>Flip the page to “Meet baby” and tell everyone at once.</p></div></div>'+
-  '<section class="card tint"><h2>How it works</h2><ol class="steps"><li><p><b>Make your page</b> in about a minute. Add your shortlist and registry links.</p></li><li><p><b>Send one link</b> to the family group chat.</p></li><li><p><b>Watch the votes and guesses</b> roll in, then announce with the same link.</p></li></ol></section>';
+  '<section class="hero"><h1>One link for everyone waiting on your baby</h1>'+
+  '<p>Let family vote on your name shortlist, guess the big day and find every registry. When baby arrives, the same link becomes your announcement.</p>'+
+  '<div class="row c"><a class="btn" href="#new">Make your Baby Page</a><a class="btn line" style="color:var(--on-table);box-shadow:inset 0 0 0 1.5px var(--on-table)" href="/#top">Browse names first</a></div></section>'+
+  '<section class="paper announce tilt-l" aria-label="Example Baby Page">'+postmark("2027-03-14")+
+    '<p class="lead">You’re invited to help name</p><div class="foil">Baby Rivera</div><p class="from">with love from Maya &amp; Sam</p>'+FLOURISH+
+    '<p class="note">We can’t decide between Wren, Olivia and Theodore. Cast your vote!</p></section>'+
+  '<div class="trio"><div class="mini"><h3>Name poll</h3><p>Your shortlist on place cards, each with its real U.S. rank and 10-year trend.</p></div>'+
+  '<div class="mini"><h3>Baby pool</h3><p>Everyone guesses the date, weight and first initial. The closest guess wins.</p></div>'+
+  '<div class="mini"><h3>Registries</h3><p>Babylist, Amazon, Target or any store, together in one place.</p></div>'+
+  '<div class="mini"><h3>Announcement</h3><p>When baby arrives, your page turns into the birth announcement.</p></div></div>'+
+  '<section class="paper"><h2>How it works</h2><ol class="steps"><li><p><b>Make your page</b> in about a minute, with your shortlist and registry links.</p></li><li><p><b>Send one link</b> to the family group chat.</p></li><li><p><b>Watch the votes and guesses</b> come in, then announce with the same link.</p></li></ol></section>';
 }
 function namesFromFavs(){ var f=ls("bnp-favs")||[]; return f.slice(0,8).map(function(k){ var b=k.replace(/-[gb]$/,""); return b.charAt(0).toUpperCase()+b.slice(1); }); }
 function vNew(edit){
   var p=edit? edit.page : {title:"",hosts:"",due:"",message:"",names:namesFromFavs().map(function(n){return {name:n};}),registries:[{label:"",url:""}],features:{poll:true,pool:true,registry:true}};
   var list=(p.names||[]).map(function(n){return n.name;});
   app.innerHTML=demoBanner()+
-  '<section class="hero"><div class="eyebrow">'+(edit?"Edit your page":"New Baby Page")+'</div><h1>'+(edit?"Update your Baby Page":"Make your Baby Page")+'</h1></section>'+
-  '<form class="card" id="f" novalidate>'+
-   '<div class="grid2"><label>Baby’s nickname <small>Shown at the top, for example “Baby Rivera” or “Little Bean”</small><input name="title" maxlength="60" required value="'+esc(p.title)+'" placeholder="Baby Rivera"></label>'+
-   '<label>From <small>Optional, first names only</small><input name="hosts" maxlength="80" value="'+esc(p.hosts)+'" placeholder="Maya &amp; Sam"></label></div>'+
-   '<label>Due date <small>Optional; turns on the baby pool countdown</small><input type="date" name="due" value="'+esc(p.due)+'"></label>'+
-   '<fieldset class="card tint" style="border:0;margin:0"><legend class="sr">Name shortlist</legend><h3>Name shortlist</h3><p class="muted" style="font-size:14px">Up to 12 names. '+(list.length&&!edit?"We added the names you saved on this site.":"Names you save on the site show up here.")+'</p>'+
-   '<div class="chips" id="chips"></div><div class="linkbox"><input id="nmin" list="nmlist" maxlength="30" placeholder="Add a name" autocomplete="off"><button class="btn small" type="button" id="nmadd">Add</button></div><datalist id="nmlist"></datalist></fieldset>'+
-   '<fieldset class="card tint" style="border:0;margin:0"><legend class="sr">Registry links</legend><h3>Registry links</h3><p class="muted" style="font-size:14px">Paste the share link from Babylist, Amazon, Target, Walmart or any store.</p><div id="regs" style="display:grid;gap:8px"></div><div><button class="btn small ghost" type="button" id="regadd">Add another registry</button></div></fieldset>'+
-   '<label>A note for your guests <small>Optional</small><textarea name="message" maxlength="400" placeholder="We can’t decide! Help us pick.">'+esc(p.message)+'</textarea></label>'+
-   '<div class="row"><label style="display:flex;gap:8px;align-items:center;font-weight:600"><input type="checkbox" name="poll" style="width:20px;min-height:0"'+(p.features.poll?" checked":"")+'>Name poll</label>'+
-   '<label style="display:flex;gap:8px;align-items:center;font-weight:600"><input type="checkbox" name="pool" style="width:20px;min-height:0"'+(p.features.pool?" checked":"")+'>Baby pool</label>'+
-   '<label style="display:flex;gap:8px;align-items:center;font-weight:600"><input type="checkbox" name="registry" style="width:20px;min-height:0"'+(p.features.registry?" checked":"")+'>Registry links</label></div>'+
-   '<p class="muted" style="font-size:13px">Anyone with the link can see this page. Please don’t add last names, addresses or photos.</p>'+
-   '<div class="row"><button class="btn" type="submit">'+(edit?"Save changes":"Create my page")+'</button>'+(edit?'<a class="btn ghost" href="#">Cancel</a>':"")+'</div><p id="err" class="down" hidden></p>'+
-  '</form>';
-  function chips(){ $("#chips").innerHTML=list.map(function(n,i){ return '<span class="chip">'+esc(n)+'<button type="button" data-rm="'+i+'" aria-label="Remove '+esc(n)+'">×</button></span>'; }).join("")||'<span class="muted" style="font-size:14px">No names yet</span>'; }
+  '<section class="hero"><h1>'+(edit?"Update your Baby Page":"Make your Baby Page")+'</h1><p>It takes about a minute. You can change anything later.</p></section>'+
+  '<form class="paper" id="f" novalidate><div class="form">'+
+   '<div class="two"><label class="field"><span>Baby’s nickname</span><small>Shown in script at the top, like “Baby Rivera” or “Little Bean”</small><input name="title" maxlength="60" required value="'+esc(p.title)+'" placeholder="Baby Rivera"></label>'+
+   '<label class="field"><span>From</span><small>Optional, first names only</small><input name="hosts" maxlength="80" value="'+esc(p.hosts)+'" placeholder="Maya &amp; Sam"></label></div>'+
+   '<label class="field"><span>Due date</span><small>Optional; adds the postmark and starts the baby pool</small><input type="date" name="due" value="'+esc(p.due)+'"></label>'+
+   '<div class="field"><span>Name shortlist</span><small>Up to 12 names. '+(list.length&&!edit?"We added the names you saved on this site.":"Names you save on the site will show up here.")+'</small>'+
+   '<div class="chips" id="chips"></div><div class="addname"><label class="field" style="flex:1"><span class="sr">Add a name</span><input id="nmin" list="nmlist" maxlength="30" placeholder="Add a name" autocomplete="off"></label><button class="btn small ink" type="button" id="nmadd">Add</button></div><datalist id="nmlist"></datalist></div>'+
+   '<div class="field"><span>Registry links</span><small>Paste the share link from Babylist, Amazon, Target, Walmart or any store</small><div id="regs" style="display:grid;gap:10px"></div><div style="margin-top:8px"><button class="btn small line" type="button" id="regadd">Add another registry</button></div></div>'+
+   '<label class="field"><span>A note for your guests</span><small>Optional</small><textarea name="message" maxlength="400" placeholder="We can’t decide! Help us pick.">'+esc(p.message)+'</textarea></label>'+
+   '<div class="field"><span>Include</span><div class="checks"><label><input type="checkbox" name="poll"'+(p.features.poll?" checked":"")+'>Name poll</label><label><input type="checkbox" name="pool"'+(p.features.pool?" checked":"")+'>Baby pool</label><label><input type="checkbox" name="registry"'+(p.features.registry?" checked":"")+'>Registry links</label></div></div>'+
+   '<p class="muted" style="font-size:16px;font-style:italic">Anyone with the link can see this page. Please don’t add last names, addresses or photos.</p>'+
+   '<div class="row c"><button class="btn" type="submit">'+(edit?"Save changes":"Make my page")+'</button>'+(edit?'<a class="btn line" href="#">Cancel</a>':"")+'</div><p id="err" class="err center" hidden></p>'+
+  '</div></form>';
+  function chips(){ $("#chips").innerHTML=list.map(function(n,i){ return '<span class="chip">'+esc(n)+'<button type="button" data-rm="'+i+'" aria-label="Remove '+esc(n)+'">×</button></span>'; }).join("")||'<span class="muted" style="font-style:italic">No names yet</span>'; }
   function addName(){ var v=$("#nmin").value.trim().replace(/\s+/g," "); if(!v) return; v=v.charAt(0).toUpperCase()+v.slice(1); if(list.length<12 && list.map(function(x){return x.toLowerCase();}).indexOf(v.toLowerCase())<0) list.push(v); $("#nmin").value=""; chips(); }
-  function regRow(r){ var d=document.createElement("div"); d.className="grid2"; d.innerHTML='<input data-rl maxlength="40" placeholder="Store, e.g. Babylist" value="'+esc(r.label)+'"><input data-ru type="url" inputmode="url" placeholder="https://…" value="'+esc(r.url)+'">'; $("#regs").appendChild(d); }
+  function regRow(r){ var d=document.createElement("div"); d.className="two"; d.innerHTML='<label class="field"><span class="sr">Store</span><input data-rl maxlength="40" placeholder="Store, like Babylist" value="'+esc(r.label)+'"></label><label class="field"><span class="sr">Registry link</span><input data-ru type="url" inputmode="url" placeholder="https://…" value="'+esc(r.url)+'"></label>'; $("#regs").appendChild(d); }
   (p.registries&&p.registries.length? p.registries : [{label:"",url:""}]).forEach(regRow);
   chips();
   $("#chips").onclick=function(e){ var b=e.target.closest("[data-rm]"); if(b){ list.splice(+b.dataset.rm,1); chips(); } };
@@ -282,77 +393,94 @@ function vNew(edit){
     var btn=$("button[type=submit]",f); btn.disabled=true;
     (edit? api.update(edit.page.id,body,OWN[edit.page.id]).then(function(){ return {id:edit.page.id}; }) : api.create(body).then(function(j){ OWN[j.id]=j.edit; ls("bnp-baby-own",OWN); return j; }))
       .then(function(j){ if(edit){ history.replaceState(null,"",LIVE===false? "/baby/#p/"+j.id : "/b/"+j.id); show(j.id,false); } else go(j.id,true); })
-      .catch(function(){ btn.disabled=false; err.textContent="Something went wrong. Please try again."; err.hidden=false; });
+      .catch(function(){ btn.disabled=false; err.textContent="Your page wasn’t saved. Check your connection and try again."; err.hidden=false; });
   };
 }
 function go(id,fresh){ if(LIVE===false){ history.pushState(null,"","/baby/#p/"+id); } else history.pushState(null,"","/b/"+id); show(id,fresh); }
 
 function show(id,fresh){
   var tok=OWN[id];
-  Promise.all([api.get(id,tok),names()]).then(function(a){ CUR=a[0]; render(fresh); }).catch(function(){
-    app.innerHTML=demoBanner()+'<section class="hero"><h1>We couldn’t find that Baby Page</h1><p class="muted">The link may be mistyped, or the page was deleted by its owner.</p><div class="row"><a class="btn" href="/baby/#new">Make a Baby Page</a></div></section>';
+  Promise.all([api.get(id,tok),names()]).then(function(a){ CUR=a[0]; render(fresh); if(CUR.page.born && !ls("bnp-seen-born-"+id)){ ls("bnp-seen-born-"+id,1); confetti(); } }).catch(function(){
+    app.innerHTML=demoBanner()+'<section class="paper center"><h2>This Baby Page isn’t here</h2><p class="sub">The link may be mistyped, or its owner deleted the page.</p><div class="row c" style="margin-top:18px"><a class="btn" href="/baby/#new">Make a Baby Page</a></div></section>';
   });
+}
+function hostTag(d,fresh){
+  var p=d.page, id=p.id, s=d.stats||{}, f=p.features||{};
+  var kind=p.born? "arrived" : (p.names&&p.names.length&&f.poll? "poll" : "pool");
+  return '<section class="host" aria-labelledby="host-h"><span class="hole" aria-hidden="true"></span><h2 id="host-h">'+(fresh? "Your page is ready to send" : "Your Baby Page")+'</h2>'+
+    (fresh? '<p class="ready">Only you see this tag. Send the link to your family group chat, and keep your private edit link below so you can update the page from any phone.</p>' : "")+
+    '<div class="linkbox"><input readonly value="'+esc(pageUrl(id))+'" aria-label="Your page link"></div>'+
+    shareButtons(pageUrl(id),msgFor(p,kind))+
+    '<div class="counts"><div><b>'+(d.voters||0)+'</b><span>voted</span></div><div><b>'+((d.guesses||[]).length)+'</b><span>guesses</span></div><div><b>'+(s.shares||0)+'</b><span>shares</span></div><div><b>'+(s.children||0)+'</b><span>new pages from yours</span></div></div>'+
+    '<details><summary>Private edit link and settings</summary><div style="display:grid;gap:10px"><p style="font-style:italic">Keep this link to yourself. It lets you edit the page from another phone or computer.</p>'+
+    '<div class="linkbox"><input readonly value="'+esc(pageUrl(id)+"#edit="+OWN[id])+'" aria-label="Private edit link"><button class="btn small ink" type="button" data-share="copy" data-url="'+esc(pageUrl(id)+"#edit="+OWN[id])+'">Copy</button></div>'+
+    '<div class="row"><a class="btn small line" href="'+(LIVE===false?"#p/"+id+"/edit":"#edit")+'">Edit page</a><button class="btn small line" type="button" id="del">Delete page</button></div></div></details>'+
+    (p.born? "" : '<details><summary>Baby’s here? Send the announcement</summary><form id="bornf" class="form" style="margin-top:6px"><div class="two"><label class="field"><span>Name</span><input name="name" required maxlength="40" value="'+esc(d.leader||"")+'"></label><label class="field"><span>Birthday</span><input type="date" name="date" required></label><label class="field"><span>Pounds</span><input type="number" name="lbs" min="0" max="20" step="1"></label><label class="field"><span>Ounces</span><input type="number" name="oz" min="0" max="15.9" step="0.1"></label><label class="field"><span>Girl or boy</span><small>Optional</small><select name="sex"><option value="">Rather not say</option><option value="g">Girl</option><option value="b">Boy</option></select></label></div><div class="row"><button class="btn" type="submit">Announce our baby</button></div></form></details>')+
+    '</section>';
 }
 function render(fresh){
   var d=CUR, p=d.page, id=p.id, f=p.features||{}, myVote=ls("bnp-vote-"+id)||[], myGuess=ls("bnp-guess-"+id);
   d.leader=(p.names||[]).map(function(n){return n.name;}).sort(function(a,b){return ((d.votes||{})[b]||0)-((d.votes||{})[a]||0);})[0]||"";
   var h=demoBanner();
-  if(d.owner){
-    var s=d.stats||{};
-    h+='<section class="card owner"><div class="eyebrow">Only you see this</div>'+
-      (fresh? '<div class="notice"><b>Your page is ready.</b> Send the link to your family group chat. Bookmark this page or keep the private edit link below so you can update it later.</div>' : "")+
-      '<h2>Share your page</h2><div class="linkbox"><input readonly value="'+esc(pageUrl(id))+'" aria-label="Your page link"></div>'+
-      shareButtons(pageUrl(id),(p.names&&p.names.length&&f.poll? "Help us name "+p.title+"!" : "Guess when "+p.title+" arrives!"),id)+
-      '<div class="stats"><div><b>'+(d.voters||0)+'</b><span>voted</span></div><div><b>'+((d.guesses||[]).length)+'</b><span>guesses</span></div><div><b>'+(s.shares||0)+'</b><span>shares</span></div><div><b>'+(s.children||0)+'</b><span>pages started from yours</span></div></div>'+
-      '<details><summary style="cursor:pointer;font-weight:700">Private edit link and settings</summary><div style="display:grid;gap:10px;margin-top:12px"><p class="muted" style="font-size:14px">Keep this link private. It lets you edit the page from another phone or computer.</p>'+
-      '<div class="linkbox"><input readonly value="'+esc(pageUrl(id)+"#edit="+OWN[id])+'" aria-label="Private edit link"><button class="btn small ghost" type="button" data-share="copy" data-url="'+esc(pageUrl(id)+"#edit="+OWN[id])+'">Copy</button></div>'+
-      '<div class="row"><a class="btn small ghost" href="'+(LIVE===false?"#p/"+id+"/edit":"#edit")+'">Edit page</a><button class="btn small ghost" type="button" id="del">Delete page</button></div></div></details>'+
-      (p.born? "" : '<details><summary style="cursor:pointer;font-weight:700">Baby’s here? Post the announcement</summary><form id="bornf" class="grid2" style="margin-top:12px"><label>Name<input name="name" required maxlength="40" value="'+esc(d.leader||"")+'"></label><label>Birthday<input type="date" name="date" required></label><label>Pounds<input type="number" name="lbs" min="0" max="20" step="1"></label><label>Ounces<input type="number" name="oz" min="0" max="15.9" step="0.1"></label><label>Girl or boy <small>Optional</small><select name="sex"><option value="">Rather not say</option><option value="g">Girl</option><option value="b">Boy</option></select></label><div style="align-self:end"><button class="btn" type="submit">Announce</button></div></form></details>')+
-      '</section>';
-  }
+  if(d.owner) h+=hostTag(d,fresh);
+
+  /* the announcement card */
   if(p.born){
-    var b=p.born, x=lookup(b.name);
-    h+='<section class="card born"><div class="eyebrow">Introducing</div><div class="big">'+esc(b.name)+'</div><p style="font-size:18px">'+(b.date?"Born "+esc(fmtDate(b.date)):"")+(b.lbs!=null?" · "+b.lbs+" lb"+(b.oz!=null?" "+b.oz+" oz":""):"")+'</p>'+
-      (p.hosts? '<p class="muted">With love from '+esc(p.hosts)+'</p>':"")+
-      (x? '<p class="muted">'+esc(b.name)+' is #'+x.rank.toLocaleString()+' in the U.S. · <a href="/#name-'+x.key+'">see the name’s history</a></p>':"")+
-      '<div class="row" style="justify-content:center">'+(x? '<a class="btn" href="/#name-'+x.key+'">Personalized gifts for '+esc(b.name)+'</a>':'')+'<a class="btn ghost" href="/#gear">Gift ideas for new parents</a></div>'+
-      shareButtons(pageUrl(id),"Meet "+b.name+"!",id)+'</section>';
+    var b=p.born, x=lookup(b.name), wt=b.lbs!=null? b.lbs+" pounds"+(b.oz!=null? ", "+b.oz+" ounces":"") : "";
+    h+='<section class="paper announce" aria-labelledby="ann-h"><p class="lead">With joy, we introduce</p><h1 id="ann-h" class="foil">'+esc(b.name)+'</h1>'+
+      (b.date? '<p class="stats-line">Born '+esc(fmtDate(b.date))+'</p>':"")+(wt? '<p>'+esc(wt)+'</p>':"")+FLOURISH+
+      (p.hosts? '<p class="from" style="margin-top:12px">With love from '+esc(p.hosts)+'</p>':"")+
+      (x? '<p class="meta" style="margin-top:10px">'+esc(b.name)+' is No. '+x.rank.toLocaleString()+' in the U.S. <a href="/#name-'+x.key+'">See the name’s story</a></p>':"")+
+      '<div class="row c" style="margin-top:20px">'+(x? '<a class="btn" href="/#name-'+x.key+'">Gifts with '+esc(b.name)+'’s name</a>':'')+'<a class="btn line" href="/#gear">Gifts for new parents</a></div>'+
+      '<div style="margin-top:18px">'+shareButtons(pageUrl(id),msgFor(p,"arrived"))+'</div></section>';
   } else {
-    h+='<section class="hero"><div class="eyebrow">'+(p.due? esc(countdown(p.due))+" · "+esc(fmtDate(p.due)) : "Baby on the way")+'</div><h1>'+esc(p.title)+'</h1>'+(p.hosts?'<p class="muted" style="font-size:18px">From '+esc(p.hosts)+'</p>':"")+(p.message?'<p style="font-size:18px;max-width:56ch">'+esc(p.message)+'</p>':"")+'</section>';
+    h+='<section class="paper announce" aria-labelledby="ann-h">'+postmark(p.due)+
+      '<p class="lead">'+(f.poll&&p.names&&p.names.length? "You’re invited to help name" : "Waiting with love for")+'</p><h1 id="ann-h" class="foil">'+esc(p.title)+'</h1>'+
+      (p.hosts? '<p class="from">with love from '+esc(p.hosts)+'</p>':"")+FLOURISH+
+      (p.due? '<p class="meta" style="margin-top:8px;font-size:17px">'+esc(countdown(p.due))+', due '+esc(fmtDate(p.due))+'</p>':"")+
+      (p.message? '<p class="note">'+esc(p.message)+'</p>':"")+'</section>';
   }
+
+  /* name poll: place cards */
   if(f.poll && p.names && p.names.length){
     var voted=myVote.length>0, total=d.voters||0, votes=d.votes||{};
-    h+='<section class="card" id="poll"><h2>'+(p.born?"The name poll":"Help pick the name")+'</h2>';
+    h+='<section class="paper tilt-r" id="poll" aria-labelledby="poll-h"><h2 id="poll-h">'+(p.born?"How the family voted":"Which name do you love?")+'</h2>';
     if(!p.born && !voted){
-      h+='<p class="muted">Choose up to three favorites. Ranks are from official U.S. birth data.</p><form id="vf" class="names">'+
-        p.names.map(function(n,i){ var x=lookup(n.name); return '<label class="nm"><input type="checkbox" name="v" value="'+esc(n.name)+'"><span><span class="n">'+esc(n.name)+'</span><br>'+nameMeta(n)+'</span><span style="color:'+(x&&x.sex==="F"?"var(--girl)":"var(--boy)")+'">'+(x?spark(x.r):"")+'</span></label>'; }).join("")+
-        '<div class="row"><button class="btn" type="submit">Vote</button><span class="muted" style="font-size:14px">'+total+' '+(total===1?"person has":"people have")+' voted</span></div></form>';
+      h+='<p class="sub">Choose up to three. Ranks come from official U.S. birth records.</p><form id="vf"><div class="places">'+
+        p.names.map(function(n){ var x=lookup(n.name), col=(x&&x.sex==="F")?"#D9557E":"#7E9CC9"; return '<label class="place"><input type="checkbox" name="v" value="'+esc(n.name)+'"><span class="seal" aria-hidden="true">✓</span><span class="n">'+esc(n.name)+'</span>'+nameMeta(n)+(x?spark(x.r,col):"")+'</label>'; }).join("")+
+        '</div><div class="row c" style="margin-top:22px"><button class="btn" type="submit">Cast my vote</button></div><p class="center muted" style="margin-top:8px;font-size:16px">'+(total? total+' '+(total===1?"person has":"people have")+' voted so far':"Be the first to vote")+'</p></form>';
     } else {
       var rows=p.names.map(function(n){return {n:n.name,c:votes[n.name]||0};}).sort(function(a,b){return b.c-a.c;}), top=rows[0].c||1;
-      h+='<p class="muted">'+total+' '+(total===1?"vote":"votes")+(voted?" · your picks: "+esc(myVote.join(", ")):"")+'</p><div style="display:grid;gap:8px">'+
-        rows.map(function(r,i){ return '<div class="bar'+(i===0&&r.c?" lead":"")+'"><span>'+esc(r.n)+'</span><span class="track"><span class="fill" style="display:block;width:'+Math.round(r.c/top*100)+'%"></span></span><span>'+r.c+'</span></div>'; }).join("")+'</div>'+
-        (!p.born? '<div class="row"><button class="btn small ghost" type="button" id="revote">Change my vote</button></div>':"")+
-        (voted&&!p.born? '<div class="notice"><b>Thanks for voting!</b> Who else should weigh in? Pass the poll along to family.'+shareButtons(pageUrl(id),"Help name "+p.title+"!",id)+'</div>':"");
+      h+='<p class="sub">'+total+' '+(total===1?"person has":"people have")+' voted'+(voted?", including you for "+esc(myVote.join(", ")):"")+'</p><div class="ribbons">'+
+        rows.map(function(r,i){ return '<div class="rib'+(i===0&&r.c?" lead":"")+'"><span class="nm">'+esc(r.n)+'</span><span class="track"><span class="fill" style="width:'+Math.max(2,Math.round(r.c/top*100))+'%"></span></span><span class="c">'+r.c+'</span></div>'; }).join("")+'</div>'+
+        (!p.born? '<div class="row c" style="margin-top:16px"><button class="btn small line" type="button" id="revote">Change my vote</button></div>':"")+
+        (voted&&!p.born? '<div class="thanks"><p class="script">Thank you!</p><p>Who else should weigh in? Send the poll to the rest of the family.</p>'+shareButtons(pageUrl(id),msgFor(p,"poll"))+'</div>':"");
     }
     h+='</section>';
   }
+
+  /* baby pool: fill in the blanks */
   if(f.pool){
     var gs=(d.guesses||[]).slice(), best=null;
     if(p.born && p.born.date){ var bd=new Date(p.born.date).getTime(); gs.forEach(function(g){ g._d=g.date? Math.abs(new Date(g.date).getTime()-bd)/864e5 : 999; if(p.born.lbs!=null && g.lbs!=null) g._d+=Math.abs((g.lbs+(g.oz||0)/16)-(p.born.lbs+(p.born.oz||0)/16)); }); gs.sort(function(a,b){return a._d-b._d;}); best=gs[0]; }
-    h+='<section class="card" id="pool"><h2>'+(p.born?"Baby pool results":"Baby pool")+'</h2>';
+    h+='<section class="paper tilt-l" id="pool" aria-labelledby="pool-h"><h2 id="pool-h">'+(p.born?"And the closest guess was…":"The baby pool")+'</h2>';
     if(!p.born && !myGuess){
-      h+='<p class="muted">Guess the details. When baby arrives, the closest guess is crowned.</p><form id="gf" style="display:grid;gap:12px"><div class="grid2"><label>Your name<input name="who" maxlength="24" required placeholder="Aunt Jo"></label><label>Birthday guess<input type="date" name="date" required value="'+esc(p.due||"")+'"></label><label>Pounds<input type="number" name="lbs" min="0" max="20" step="1" placeholder="7"></label><label>Ounces<input type="number" name="oz" min="0" max="15.9" step="0.1" placeholder="8"></label><label>Girl or boy<select name="sex"><option value="">Not guessing</option><option value="g">Girl</option><option value="b">Boy</option></select></label><label>First initial<input name="initial" maxlength="1" placeholder="A"></label></div><div><button class="btn" type="submit">Submit my guess</button></div></form>';
+      h+='<p class="sub">Fill in your guess. The closest one wins bragging rights.</p><form id="gf"><p class="blanks">I think baby arrives on <label><span class="sr">Birthday guess</span><input type="date" name="date" required value="'+esc(p.due||"")+'"></label>, weighing <label><span class="sr">Pounds</span><input class="num" type="number" name="lbs" min="0" max="20" step="1" placeholder="7"></label> lb <label><span class="sr">Ounces</span><input class="num" type="number" name="oz" min="0" max="15.9" step="0.1" placeholder="8"></label> oz. '+
+        'A <label><span class="sr">Girl or boy</span><select name="sex"><option value="">little one</option><option value="g">girl</option><option value="b">boy</option></select></label> whose name starts with <label><span class="sr">First initial</span><input class="init" name="initial" maxlength="1" placeholder="A"></label>.<br>Signed, <label><span class="sr">Your name</span><input class="who" name="who" maxlength="24" required placeholder="Aunt Jo"></label></p>'+
+        '<div class="row c" style="margin-top:10px"><button class="btn" type="submit">Seal my guess</button></div></form>';
     }
     if(gs.length){
-      h+='<table><thead><tr><th>Guest</th><th>Date</th><th>Weight</th><th>Sex</th><th>Initial</th></tr></thead><tbody>'+
-      gs.map(function(g){ return '<tr'+(g===best?' class="best"':"")+'><td>'+(g===best?"🏆 ":"")+esc(g.who)+'</td><td>'+esc(g.date?fmtDate(g.date).replace(/, \d{4}$/,""):"")+'</td><td>'+(g.lbs!=null?g.lbs+" lb"+(g.oz!=null?" "+g.oz+" oz":""):"")+'</td><td>'+(g.sex==="g"?"Girl":g.sex==="b"?"Boy":"")+'</td><td>'+esc(g.initial||"")+'</td></tr>'; }).join("")+'</tbody></table>';
-    } else if(myGuess||p.born){ h+='<p class="muted">No guesses yet.</p>'; }
-    if(myGuess && !p.born) h+='<div class="notice"><b>Your guess is in.</b> Get the rest of the family playing.'+shareButtons(pageUrl(id),"Guess when "+p.title+" arrives!",id)+'</div>';
+      h+='<table class="guesses"><thead><tr><th>Guest</th><th>Date</th><th>Weight</th><th>Guess</th></tr></thead><tbody>'+
+      gs.map(function(g){ return '<tr'+(g===best?' class="best"':"")+'><td>'+(g===best?"🏆 ":"")+esc(g.who)+'</td><td>'+esc(g.date?fmtDate(g.date).replace(/, \d{4}$/,""):"")+'</td><td>'+(g.lbs!=null?g.lbs+" lb"+(g.oz!=null?" "+g.oz+" oz":""):"")+'</td><td>'+(g.sex==="g"?"Girl":g.sex==="b"?"Boy":"")+(g.initial?(g.sex?", ":"")+esc(g.initial):"")+'</td></tr>'; }).join("")+'</tbody></table>';
+    } else if(myGuess||p.born){ h+='<p class="sub" style="margin-top:12px">No guesses yet.</p>'; }
+    if(myGuess && !p.born) h+='<div class="thanks"><p class="script">Your guess is sealed</p><p>Get the rest of the family playing.</p>'+shareButtons(pageUrl(id),msgFor(p,"pool"))+'</div>';
     h+='</section>';
   }
+
+  /* registries */
   if(f.registry && p.registries && p.registries.length){
-    h+='<section class="card" id="registry"><h2>Registries</h2><div class="reg">'+p.registries.map(function(r){ var host=""; try{ host=new URL(r.url).hostname.replace(/^www\./,""); }catch(e){} return '<a href="'+esc(r.url)+'" target="_blank" rel="nofollow ugc noopener">'+esc(r.label||host||"Registry")+'<span class="muted" style="font-weight:600;font-size:14px">'+esc(host)+' ↗</span></a>'; }).join("")+'</div>'+
-      '<p class="muted" style="font-size:14px">Want to give something personal? <a href="/#gear">See our gift guides</a>.</p></section>';
+    h+='<section class="paper tilt-r" id="registry" aria-labelledby="reg-h"><h2 id="reg-h">Where we’re registered</h2><div class="tags">'+p.registries.map(function(r){ var host=""; try{ host=new URL(r.url).hostname.replace(/^www\./,""); }catch(e){} return '<a class="tag" href="'+esc(r.url)+'" target="_blank" rel="nofollow ugc noopener">'+esc(r.label||host||"Registry")+'<small>'+esc(host)+' ↗</small></a>'; }).join("")+'</div>'+
+      '<p class="sub" style="margin-top:16px">Looking for something personal? <a href="/#gear">See our gift guides</a>.</p></section>';
   }
   if(!d.owner) h+=passAlong(id);
   app.innerHTML=h;
@@ -366,14 +494,14 @@ function wire(){
       api.vote(id,picks).then(function(){
         // Count it here too: the shared tally can take up to a minute to include a new vote.
         var v=CUR.votes=CUR.votes||{}; if(PREV){ PREV.forEach(function(n){ if(v[n]) v[n]--; }); } else CUR.voters=(CUR.voters||0)+1;
-        picks.forEach(function(n){ v[n]=(v[n]||0)+1; }); PREV=null; ls("bnp-vote-"+id,picks); render(); }).catch(function(){ toast("Couldn’t save your vote. Try again."); }); };
+        picks.forEach(function(n){ v[n]=(v[n]||0)+1; }); PREV=null; ls("bnp-vote-"+id,picks); render(); confetti(); var s=$("#poll"); if(s) s.scrollIntoView({block:"start"}); }).catch(function(){ toast("Your vote wasn’t saved. Try again."); }); };
   }
   var rv=$("#revote"); if(rv) rv.onclick=function(){ PREV=ls("bnp-vote-"+id); ls("bnp-vote-"+id,[]); render(); };
-  var gf=$("#gf"); if(gf) gf.onsubmit=function(e){ e.preventDefault(); var f=e.target; if(!f.who.value.trim()||!f.date.value){ toast("Add your name and a date"); return; }
+  var gf=$("#gf"); if(gf) gf.onsubmit=function(e){ e.preventDefault(); var f=e.target; if(!f.who.value.trim()||!f.date.value){ toast("Add a date and sign your name"); return; }
     var g={who:f.who.value.trim(),date:f.date.value,lbs:f.lbs.value===""?null:+f.lbs.value,oz:f.oz.value===""?null:+f.oz.value,sex:f.sex.value,initial:f.initial.value.trim().toUpperCase()};
-    api.guess(id,g).then(function(){ ls("bnp-guess-"+id,g); (CUR.guesses=CUR.guesses||[]).push(g); render(); }).catch(function(){ toast("Couldn’t save your guess. Try again."); }); };
+    api.guess(id,g).then(function(){ ls("bnp-guess-"+id,g); (CUR.guesses=CUR.guesses||[]).push(g); render(); var s=$("#pool"); if(s) s.scrollIntoView({block:"start"}); }).catch(function(){ toast("Your guess wasn’t saved. Try again."); }); };
   var bf=$("#bornf"); if(bf) bf.onsubmit=function(e){ e.preventDefault(); var f=e.target;
-    api.update(id,{born:{name:f.name.value.trim(),date:f.date.value,lbs:f.lbs.value===""?null:+f.lbs.value,oz:f.oz.value===""?null:+f.oz.value,sex:f.sex.value}},OWN[id]).then(function(){ show(id); }); };
+    api.update(id,{born:{name:f.name.value.trim(),date:f.date.value,lbs:f.lbs.value===""?null:+f.lbs.value,oz:f.oz.value===""?null:+f.oz.value,sex:f.sex.value}},OWN[id]).then(function(){ ls("bnp-seen-born-"+id,null); show(id); window.scrollTo(0,0); }); };
   var del=$("#del"); if(del) del.onclick=function(){ if(!confirm("Delete this Baby Page and all its votes and guesses? This can’t be undone.")) return;
     api.del(id,OWN[id]).then(function(){ delete OWN[id]; ls("bnp-baby-own",OWN); location.href="/baby/"; }); };
 }

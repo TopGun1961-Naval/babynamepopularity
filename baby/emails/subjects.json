@@ -1,0 +1,11 @@
+{
+ "invite": {
+  "subject": "{{title}}: help pick the name and guess the big day"
+ },
+ "results": {
+  "subject": "The votes are in for {{title}}"
+ },
+ "arrival": {
+  "subject": "{{baby_name}} is here!"
+ }
+}
